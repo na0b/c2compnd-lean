@@ -1,0 +1,28 @@
+\begin{lemma}
+Let $n\in\mathbb{N}$, let $f:\mathbb{R}^n\to\mathbb{R}$ and let $x_0\in\mathbb{R}^n$. Assume that
+$f$ is of class $C^2$ in a neighbourhood of $x_0$ and that $x_0$ is a local maximum point of $f$.
+Then
+$$D^2f(x_0)[w,w]\ \leq\ 0\qquad\text{for every }w\in\mathbb{R}^n .$$
+\end{lemma}
+\begin{proof}
+Fix $w\in\mathbb{R}^n$ and let $\gamma(t):=x_0+tw$, $g:=f\circ\gamma$, i.e.\ $g(t)=f(x_0+tw)$ for
+$t\in\mathbb{R}$. The map $\gamma:\mathbb{R}\to\mathbb{R}^n$ is affine, hence smooth, with
+$\gamma(0)=x_0$ and $\gamma'(t)=w$ for every $t$.
+
+\emph{Step 1: $g$ is of class $C^2$ in a neighbourhood of $0$.} By hypothesis there is an open set
+$V\ni x_0$ on which $f$ is of class $C^2$. Since $\gamma$ is continuous and $\gamma(0)=x_0$, the
+set $\gamma^{-1}(V)$ is open and contains $0$; on it $g=f\circ\gamma$ is the composition of a
+smooth map with a $C^2$ map, hence of class $C^2$.
+
+\emph{Step 2: $0$ is a local maximum point of $g$.} By hypothesis there is a neighbourhood
+$N\ni x_0$ with $f(y)\leq f(x_0)$ for all $y\in N$. Then $\gamma^{-1}(N)$ is a neighbourhood of
+$0$, and for $t\in\gamma^{-1}(N)$ we get $g(t)=f(\gamma(t))\leq f(x_0)=g(0)$.
+
+\emph{Step 3: $g''(0)=D^2f(x_0)[w,w]$.} The function $f$ is of class $C^2$ in a neighbourhood of
+$x_0$, so \noderef{DerivDerivRestrictLine} applies to $f$, $x_0$ and $w$. Since $g$ is precisely
+the restriction $t\mapsto f(x_0+tw)$ of $f$ to the line through $x_0$ in the direction $w$, its
+conclusion reads $g''(0)=D^2f(x_0)[w,w]$.
+
+\emph{Conclusion.} By Steps 1 and 2 and \noderef{SecondDerivTestOneDim} applied to $g$ at
+$t_0=0$, we have $g''(0)\leq0$. By Step 3 this is exactly $D^2f(x_0)[w,w]\leq0$.
+\end{proof}

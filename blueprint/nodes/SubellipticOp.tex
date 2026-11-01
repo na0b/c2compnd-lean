@@ -1,0 +1,16 @@
+\begin{definition}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be vector fields $\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$ and
+let $a:\mathbb{R}^m\to\mathbb{R}^{m\times m}$, $a(\xi)=(a_{i,j}(\xi))_{i,j}$. For
+$u:\mathbb{R}^n\to\mathbb{R}$ and $x\in\mathbb{R}^n$ we set
+$$\mathcal{L}u(x)\ :=\ -\operatorname{Tr}\Big(a\big(\mathfrak{X}u(x)\big)\,
+\mathfrak{X}\mathfrak{X}u(x)\Big)\ =\ -\sum_{i,j=1}^m
+a_{i,j}\big(\mathfrak{X}u(x)\big)\,X_iX_ju(x),$$
+where $\mathfrak{X}u(x)$ is the horizontal gradient of \noderef{HGrad} and
+$\mathfrak{X}\mathfrak{X}u(x)$ the horizontal second derivative matrix of \noderef{HHess}; the
+second expression is the identity $\operatorname{Tr}(AB)=\sum_{i,k}A_{i,k}B_{k,i}$ together with
+$\big(\mathfrak{X}\mathfrak{X}u\big)_{j,i}=X_iX_ju$.
+
+This is the operator of \texttt{eq:maineq} of the paper. Whenever $a(\xi)$ is symmetric the second
+expression coincides, after exchanging the summation indices, with the paper's
+$-\sum_{i,j}a_{i,j}(\mathfrak{X}u)X_jX_iu$.
+\end{definition}

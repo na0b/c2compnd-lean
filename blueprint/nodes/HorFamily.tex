@@ -1,0 +1,17 @@
+\begin{definition}
+Let $n,m\in\mathbb{N}$ and let $\sigma=(\sigma^1,\dots,\sigma^m)$ be a family of vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$. We define $\mathrm{HorFamily}(\sigma)$, a family of vector
+fields on $\mathbb{R}^n$, inductively by the two generation rules:
+\begin{itemize}
+\item[(i)] $\sigma^i\in\mathrm{HorFamily}(\sigma)$ for every $i\in\{1,\dots,m\}$;
+\item[(ii)] if $V,W\in\mathrm{HorFamily}(\sigma)$, then $[V,W]\in\mathrm{HorFamily}(\sigma)$,
+where $[V,W](x)=DW(x)\,V(x)-DV(x)\,W(x)$ is the Lie bracket.
+\end{itemize}
+Equivalently, $\mathrm{HorFamily}(\sigma)$ is the smallest family of vector fields on
+$\mathbb{R}^n$ that contains each $\sigma^i$ and is closed under the Lie bracket.
+
+This is the family of iterated commutators denoted $\mathrm{Lie}(X_1,\dots,X_m)$ in the paper's
+H\"ormander rank condition \texttt{eq:horcond}, written for the first-order operators
+$X_i=\sigma^i(x)\cdot\nabla$ in terms of the coefficient fields $\sigma^i$ of Section~2.1 of the
+paper.
+\end{definition}

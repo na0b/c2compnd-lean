@@ -1,0 +1,37 @@
+\begin{lemma}
+Let $n,m\in\mathbb{N}$, let $\mathcal{W}$ be a continuous bilinear form on $\mathbb{R}^n$ such that
+$$\mathcal{W}[z,z]\ \geq\ 0\qquad\text{for every }z\in\mathbb{R}^n,$$
+and let $s^1,\dots,s^m\in\mathbb{R}^n$ be arbitrary. Then the matrix
+$P\in\mathbb{R}^{m\times m}$ with entries
+$$P_{i,j}:=\tfrac12\Big(\mathcal{W}\big[s^j,s^i\big]+\mathcal{W}\big[s^i,s^j\big]\Big)$$
+is positive semi-definite, i.e.\ symmetric with $\langle P\xi,\xi\rangle\geq0$ for every
+$\xi\in\mathbb{R}^m$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: $P$ is symmetric.} Exchanging $i$ and $j$ in the defining formula exchanges the two
+summands and leaves their sum unchanged:
+$$P_{j,i}=\tfrac12\Big(\mathcal{W}\big[s^i,s^j\big]+\mathcal{W}\big[s^j,s^i\big]\Big)=P_{i,j}.$$
+
+\emph{Step 2: expansion of the quadratic form.} Fix $\xi\in\mathbb{R}^m$ and put
+$z:=\sum_{i=1}^m\xi_i\,s^i\in\mathbb{R}^n$. By the definition of $P$ and bilinearity of the
+summation,
+\begin{equation*}\langle P\xi,\xi\rangle=\sum_{i,j=1}^m\xi_i\,P_{i,j}\,\xi_j
+=\tfrac12\sum_{i,j=1}^m\xi_i\xi_j\,\mathcal{W}\big[s^j,s^i\big]
++\tfrac12\sum_{i,j=1}^m\xi_i\xi_j\,\mathcal{W}\big[s^i,s^j\big]. \tag{1}\end{equation*}
+
+\emph{Step 3: the two double sums agree.} Renaming the pair of summation indices
+$i\leftrightarrow j$ in the first double sum of (1), and using $\xi_j\xi_i=\xi_i\xi_j$,
+\begin{equation*}\sum_{i,j=1}^m\xi_i\xi_j\,\mathcal{W}\big[s^j,s^i\big]
+=\sum_{i,j=1}^m\xi_j\xi_i\,\mathcal{W}\big[s^i,s^j\big]
+=\sum_{i,j=1}^m\xi_i\xi_j\,\mathcal{W}\big[s^i,s^j\big]. \tag{2}\end{equation*}
+(Both double sums are finite, so the renaming is a bijective reindexing of the index set
+$\{1,\dots,m\}^2$.) Substituting (2) into (1), the two halves coincide and
+$$\langle P\xi,\xi\rangle=\sum_{i,j=1}^m\xi_i\xi_j\,\mathcal{W}\big[s^j,s^i\big].$$
+
+\emph{Step 4: conclusion.} By bilinearity of $\mathcal{W}$, expanding $z$ in both arguments,
+$$\mathcal{W}[z,z]=\sum_{i,j=1}^m\xi_i\xi_j\,\mathcal{W}\big[s^i,s^j\big]
+=\sum_{i,j=1}^m\xi_i\xi_j\,\mathcal{W}\big[s^j,s^i\big],$$
+the second equality being (2) read backwards. Hence
+$\langle P\xi,\xi\rangle=\mathcal{W}[z,z]\geq0$ by hypothesis. Since $\xi\in\mathbb{R}^m$ was
+arbitrary, this together with the symmetry of Step 1 says that $P$ is positive semi-definite.
+\end{proof}

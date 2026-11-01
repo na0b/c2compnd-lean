@@ -1,0 +1,18 @@
+\begin{definition}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be vector fields $\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$,
+with associated first-order operators $X_i=\sigma^i(x)\cdot\nabla$, and let
+$u:\mathbb{R}^n\to\mathbb{R}$ and $x\in\mathbb{R}^n$. The \emph{horizontal second derivative
+matrix} of $u$ at $x$ is the matrix
+$\mathfrak{X}\mathfrak{X}u(x)\in\mathbb{R}^{m\times m}$ defined entrywise by
+$$\big(\mathfrak{X}\mathfrak{X}u(x)\big)_{i,j}\ :=\ D\Big(y\mapsto
+Du(y)\big[\sigma^i(y)\big]\Big)(x)\big[\sigma^j(x)\big]\ =\ X_jX_iu(x),
+\qquad i,j=1,\dots,m,$$
+that is, the $(i,j)$ entry is obtained by differentiating the function
+$y\mapsto X_iu(y)=\big(\mathfrak{X}u(y)\big)_i$ at $x$ in the direction $\sigma^j(x)$. All
+derivatives follow the convention of the preamble (they are $0$ where the relevant function fails
+to be differentiable).
+
+Thus the $(i,j)$ entry is $X_jX_iu$, matching the convention
+$\mathfrak{X}\mathfrak{X}u=(X_jX_iu)_{i,j}$ of Section~2.1 of the paper. This matrix is not
+symmetric in general.
+\end{definition}

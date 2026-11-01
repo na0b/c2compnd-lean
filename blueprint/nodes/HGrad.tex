@@ -1,0 +1,15 @@
+\begin{definition}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be vector fields $\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$ and
+let $X_i:=\sigma^i(x)\cdot\nabla$ be the associated first-order operators, as in Section~2.1 of the
+paper. For $u:\mathbb{R}^n\to\mathbb{R}$ and $x\in\mathbb{R}^n$, the \emph{horizontal
+(sub-elliptic) gradient} of $u$ at $x$ is the vector $\mathfrak{X}u(x)\in\mathbb{R}^m$ with
+components
+$$\big(\mathfrak{X}u(x)\big)_i\ :=\ Du(x)\big[\sigma^i(x)\big]\ =\ \big\langle\nabla
+u(x),\sigma^i(x)\big\rangle\ =\ X_iu(x),\qquad i=1,\dots,m,$$
+where $Du(x)$ is the Fr\'echet derivative of $u$ at $x$ (equal to $0$ when $u$ is not
+differentiable at $x$, by the convention of the preamble).
+
+This is the quantity $\mathfrak{X}u=(X_1u,\dots,X_mu)$ of Section~2.1 of the paper, equivalently
+$\mathfrak{X}u=\sigma(x)^T\nabla u$ in the notation of \texttt{eq:sigrad}, written as a function
+$\{1,\dots,m\}\to\mathbb{R}$.
+\end{definition}

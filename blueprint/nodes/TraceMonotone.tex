@@ -1,0 +1,25 @@
+\begin{lemma}
+Let $m\in\mathbb{N}$ and let $A,X,Y\in\mathbb{R}^{m\times m}$. Assume that $A$ is positive
+semi-definite and that $X-Y$ is positive semi-definite, i.e.\ $Y\leq X$ in the order on symmetric
+matrices of Section~2.1 of the paper. Then
+$$\operatorname{Tr}(AY)\ \leq\ \operatorname{Tr}(AX).$$
+\end{lemma}
+\begin{proof}
+Set $Z:=X-Y$, which is positive semi-definite by hypothesis. By linearity of the trace and
+distributivity of the matrix product (preamble),
+$$\operatorname{Tr}(AX)-\operatorname{Tr}(AY)=\operatorname{Tr}\big(A(X-Y)\big)
+=\operatorname{Tr}(AZ),$$
+so it suffices to prove $\operatorname{Tr}(AZ)\geq0$.
+
+Since $A$ and $Z$ are positive semi-definite, each has a positive semi-definite square root
+(preamble): there are symmetric $P,Q\in\mathbb{R}^{m\times m}$ with $P^2=A$ and $Q^2=Z$. Put
+$B:=QP$, so that $B^T=P^TQ^T=PQ$. Using $\operatorname{Tr}(MN)=\operatorname{Tr}(NM)$ (preamble)
+with $M=PPQ$ and $N=Q$ we get
+$$\operatorname{Tr}(AZ)=\operatorname{Tr}(PPQQ)=\operatorname{Tr}(QPPQ)
+=\operatorname{Tr}\big((QP)(PQ)\big)=\operatorname{Tr}\big(BB^T\big).$$
+Finally, by the entrywise formula for the trace of a product (preamble),
+$$\operatorname{Tr}\big(BB^T\big)=\sum_{i,k=1}^m B_{i,k}\,\big(B^T\big)_{k,i}
+=\sum_{i,k=1}^m B_{i,k}^2\ \geq\ 0 .$$
+Hence $\operatorname{Tr}(AX)-\operatorname{Tr}(AY)=\operatorname{Tr}(AZ)\geq0$, which is the
+claim.
+\end{proof}

@@ -1,0 +1,56 @@
+\begin{lemma}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be vector fields $\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$, let
+$u,v:\mathbb{R}^n\to\mathbb{R}$ and let $x\in\mathbb{R}^n$. Assume that $u$ and $v$ are of class
+$C^2$ in a neighbourhood of $x$, that every $\sigma^i$ is of class $C^1$ in a neighbourhood of
+$x$, and that
+$$Du(x)=Dv(x)\qquad\text{and}\qquad D^2u(x)[w,w]\leq D^2v(x)[w,w]\quad\text{for every }
+w\in\mathbb{R}^n .$$
+Then
+$$\mathfrak{X}u(x)=\mathfrak{X}v(x)\qquad\text{and}\qquad
+\mathfrak{X}\mathfrak{X}^\star v(x)-\mathfrak{X}\mathfrak{X}^\star u(x)\ \text{ is positive
+semi-definite},$$
+the latter being $\mathfrak{X}\mathfrak{X}^\star u(x)\leq\mathfrak{X}\mathfrak{X}^\star v(x)$ in the
+order of Section~2.1 of the paper. This is the last sentence of Section~2.1 of the paper: if
+$u,w\in C^2$ satisfy $\nabla u(x)=\nabla w(x)$ and $D^2u(x)\leq D^2w(x)$ at a point $x$, then
+$\mathfrak{X}u(x)=\mathfrak{X}w(x)$ and
+$\mathfrak{X}\mathfrak{X}^\star u(x)\leq\mathfrak{X}\mathfrak{X}^\star w(x)$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the horizontal gradients.} Evaluating the equality of linear functionals
+$Du(x)=Dv(x)$ at $\sigma^i(x)$ gives, for every $i$,
+$\big(\mathfrak{X}u(x)\big)_i=Du(x)[\sigma^i(x)]=Dv(x)[\sigma^i(x)]=\big(\mathfrak{X}v(x)\big)_i$
+by the definition of \noderef{HGrad}. Hence $\mathfrak{X}u(x)=\mathfrak{X}v(x)$.
+
+\emph{Step 2: the entries of the horizontal second derivative matrices.} Fix $i,j$. The hypotheses
+of \noderef{HHessEntryFormula} hold for $u$ (of class $C^2$ near $x$) and for $v$ (of class $C^2$
+near $x$), with $\sigma^i$ of class $C^1$ near $x$. Therefore
+$$\big(\mathfrak{X}\mathfrak{X}u(x)\big)_{i,j}
+=D^2u(x)\big[\sigma^j(x),\sigma^i(x)\big]+Du(x)\big[D\sigma^i(x)\,\sigma^j(x)\big],$$
+$$\big(\mathfrak{X}\mathfrak{X}v(x)\big)_{i,j}
+=D^2v(x)\big[\sigma^j(x),\sigma^i(x)\big]+Dv(x)\big[D\sigma^i(x)\,\sigma^j(x)\big].$$
+Since $Du(x)=Dv(x)$, the two first-order terms are equal, and subtracting gives
+\begin{equation*}\big(\mathfrak{X}\mathfrak{X}v(x)\big)_{i,j}-\big(\mathfrak{X}\mathfrak{X}u(x)\big)_{i,j}
+=\mathcal{W}\big[\sigma^j(x),\sigma^i(x)\big],\qquad
+\mathcal{W}:=D^2v(x)-D^2u(x), \tag{1}\end{equation*}
+where $\mathcal{W}$ is a bilinear form on $\mathbb{R}^n$.
+
+\emph{Step 3: the difference of the symmetrized matrices.} Write
+$P:=\mathfrak{X}\mathfrak{X}^\star v(x)-\mathfrak{X}\mathfrak{X}^\star u(x)$ and
+$\Delta:=\mathfrak{X}\mathfrak{X}v(x)-\mathfrak{X}\mathfrak{X}u(x)$. By the definition of the
+symmetrization (\noderef{HHessSym}) and linearity, $P=\tfrac12\big(\Delta+\Delta^T\big)$, so that
+by (1)
+\begin{equation*}P_{i,j}=\tfrac12\big(\Delta_{i,j}+\Delta_{j,i}\big)
+=\tfrac12\Big(\mathcal{W}\big[\sigma^j(x),\sigma^i(x)\big]
++\mathcal{W}\big[\sigma^i(x),\sigma^j(x)\big]\Big) \tag{2}\end{equation*}
+for all $i,j\in\{1,\dots,m\}$.
+
+\emph{Step 4: $P$ is positive semi-definite.} The form $\mathcal{W}=D^2v(x)-D^2u(x)$ is a
+continuous bilinear form on $\mathbb{R}^n$, being the difference of two second Fr\'echet
+derivatives, and for every $z\in\mathbb{R}^n$
+$$\mathcal{W}[z,z]=D^2v(x)[z,z]-D^2u(x)[z,z]\ \geq\ 0$$
+by the hypothesis $D^2u(x)[w,w]\leq D^2v(x)[w,w]$ applied with $w=z$. Hence
+\noderef{PosSemidefSymmQuadForm} applies to $\mathcal{W}$ and to the finite family
+$s^i:=\sigma^i(x)$, $i=1,\dots,m$, and asserts that the matrix with entries
+$\tfrac12\big(\mathcal{W}[s^j,s^i]+\mathcal{W}[s^i,s^j]\big)$ is positive semi-definite. By (2)
+that matrix is $P$, so $P$ is positive semi-definite, which with Step 1 completes the proof.
+\end{proof}

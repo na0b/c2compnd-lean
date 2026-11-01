@@ -1,0 +1,17 @@
+\begin{definition}
+Let $\sigma$ and $a$ be as in \noderef{SubellipticOp}, let $U\subset\mathbb{R}^n$ and let
+$u:\mathbb{R}^n\to\mathbb{R}$. We say that $u$ is a \emph{classical super-solution} of
+\texttt{eq:maineq} in $U$, and write $\mathcal{L}u\geq0$ in $U$, if
+$$\mathcal{L}u(x)\geq0\qquad\text{at every }x\in U\text{ with }\mathfrak{X}u(x)\neq0 .$$
+Here $\mathfrak{X}u$ is the horizontal gradient of \noderef{HGrad} and $\mathcal{L}$ the operator
+of \noderef{SubellipticOp}. No condition is imposed at the horizontal critical points of $u$,
+where $a$ need not be defined.
+
+This is the super-solution condition of Definition \texttt{def:classical} of the paper, which
+defines sub- and super-solutions in one breath. It is not a restatement of the sub-solution
+condition of \noderef{IsClassicalSubsol} applied to $-u$: the matrix $a$ is not assumed to be even
+(Remark \texttt{rem:hom}(a) of the paper says so explicitly), so in general
+$a(-\mathfrak{X}u)\neq a(\mathfrak{X}u)$ and $\mathcal{L}(-u)\neq-\mathcal{L}u$. As in
+\noderef{IsClassicalSubsol}, the paper's openness of $U$ and $C^2$ regularity of $u$ are carried as
+separate hypotheses by the nodes that use this notion.
+\end{definition}

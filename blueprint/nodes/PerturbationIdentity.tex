@@ -1,0 +1,55 @@
+\begin{lemma}
+Let $U\subset\mathbb{R}^n$ be open, let $\sigma=(\sigma^1,\dots,\sigma^m)$ be smooth vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$, let $\beta\in\mathbb{R}$ and let
+$a:\mathbb{R}^m\to\mathbb{R}^{m\times m}$ satisfy the homogeneity condition
+$$a(t\xi)=t^\beta\,a(\xi)\qquad\text{for every }t>0\text{ and every }
+\xi\in\mathbb{R}^m\setminus\{0\}.$$
+Let $h\in C^2(\mathbb{R})$, let $w:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ on $U$ and let
+$x\in U$ be such that $\mathfrak{X}w(x)\neq0$ and $h'(w(x))>0$. Then
+$$\mathcal{L}(h\circ w)(x)\ =\ -h'\big(w(x)\big)^{\beta}
+\Big[h''\big(w(x)\big)\,\mathcal{E}\big(\mathfrak{X}w(x)\big)
+-h'\big(w(x)\big)\,\mathcal{L}w(x)\Big],$$
+where $\mathcal{E}$ is the ellipticity function of \noderef{EllipticityFn} and $t^\beta$ denotes
+the real power of the positive real number $t=h'(w(x))$. This is Lemma \texttt{lem:tech}
+(identity \texttt{eq:estLh}) of the paper.
+\end{lemma}
+\begin{proof}
+Put $t:=h'(w(x))>0$, $s:=h''(w(x))$ and $\xi:=\mathfrak{X}w(x)\neq0$.
+
+Since $U$ is open, $x\in U$ and $w$ is of class $C^2$ on $U$, the function $w$ is of class $C^2$ in
+a neighbourhood of $x$; and each $\sigma^i$ is smooth, hence of class $C^1$ in a neighbourhood of
+$x$.
+
+\emph{Step 1: the two chain rules.} By \noderef{HGradHHessComp} (whose hypotheses are exactly
+$h\in C^2(\mathbb{R})$, $w$ of class $C^2$ near $x$, and each $\sigma^i$ of class $C^1$ near $x$),
+\begin{equation*}\mathfrak{X}(h\circ w)(x)=t\,\xi,\qquad
+\mathfrak{X}\mathfrak{X}(h\circ w)(x)=t\,\mathfrak{X}\mathfrak{X}w(x)+s\,\xi\otimes\xi. \tag{1}\end{equation*}
+
+\emph{Step 2: homogeneity of $a$ at the perturbed gradient.} Since $t>0$ and $\xi\neq0$, the
+homogeneity hypothesis applies and gives
+\begin{equation*}a\big(\mathfrak{X}(h\circ w)(x)\big)=a(t\,\xi)=t^{\beta}\,a(\xi). \tag{2}\end{equation*}
+
+\emph{Step 3: expanding the operator.} By the definition of $\mathcal{L}$
+(\noderef{SubellipticOp}) applied to $h\circ w$, then by (1), (2) and the linearity of the trace in
+its second factor (preamble),
+\begin{equation*}\mathcal{L}(h\circ w)(x)
+=-\operatorname{Tr}\Big(a\big(\mathfrak{X}(h\circ w)(x)\big)\,
+\mathfrak{X}\mathfrak{X}(h\circ w)(x)\Big)
+=-t^{\beta}\Big[t\operatorname{Tr}\big(a(\xi)\,\mathfrak{X}\mathfrak{X}w(x)\big)
++s\operatorname{Tr}\big(a(\xi)\,\xi\otimes\xi\big)\Big]. \tag{3}\end{equation*}
+
+\emph{Step 4: the two traces.} First, by the entrywise formula for the trace of a product
+(preamble) and $(\xi\otimes\xi)_{k,i}=\xi_k\xi_i$,
+$$\operatorname{Tr}\big(a(\xi)\,\xi\otimes\xi\big)=\sum_{i,k=1}^m
+a_{i,k}(\xi)\,(\xi\otimes\xi)_{k,i}=\sum_{i,k=1}^m\xi_i\,a_{i,k}(\xi)\,\xi_k
+=\big\langle a(\xi)\xi,\xi\big\rangle=\mathcal{E}(\xi),$$
+by the definition of \noderef{EllipticityFn}. Second, since $\mathfrak{X}w(x)=\xi$, the definition
+of $\mathcal{L}$ (\noderef{SubellipticOp}) applied to $w$ at $x$ reads
+$\mathcal{L}w(x)=-\operatorname{Tr}\big(a(\xi)\,\mathfrak{X}\mathfrak{X}w(x)\big)$, i.e.
+$$\operatorname{Tr}\big(a(\xi)\,\mathfrak{X}\mathfrak{X}w(x)\big)=-\mathcal{L}w(x).$$
+
+\emph{Step 5: conclusion.} Substituting the two identities of Step 4 into (3),
+$$\mathcal{L}(h\circ w)(x)=-t^{\beta}\big[-t\,\mathcal{L}w(x)+s\,\mathcal{E}(\xi)\big]
+=-t^{\beta}\big[s\,\mathcal{E}(\xi)-t\,\mathcal{L}w(x)\big],$$
+which, with $t=h'(w(x))$, $s=h''(w(x))$ and $\xi=\mathfrak{X}w(x)$, is the asserted identity.
+\end{proof}

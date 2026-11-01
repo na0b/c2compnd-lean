@@ -1,0 +1,73 @@
+\begin{lemma}
+Let $U\subset\mathbb{R}^n$ be open, let $\sigma=(\sigma^1,\dots,\sigma^m)$ be smooth vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$ and let $a:\mathbb{R}^m\to\mathbb{R}^{m\times m}$ be such
+that $a(\xi)$ is positive semi-definite (hence symmetric) for every
+$\xi\in\mathbb{R}^m\setminus\{0\}$. Let $u,v:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ on $U$
+and let $x_0\in U$ be a local maximum point of $u-v$ with $\mathfrak{X}u(x_0)\neq0$. Then
+$$\mathfrak{X}v(x_0)=\mathfrak{X}u(x_0),\qquad
+\mathfrak{X}\mathfrak{X}^\star v(x_0)-\mathfrak{X}\mathfrak{X}^\star u(x_0)
+\ \text{ is positive semi-definite},\qquad
+\mathcal{L}v(x_0)\leq\mathcal{L}u(x_0),$$
+the middle assertion being $\mathfrak{X}\mathfrak{X}^\star
+u(x_0)\leq\mathfrak{X}\mathfrak{X}^\star v(x_0)$ in the order of Section~2.1 of the paper. This is
+the first assertion of Lemma \texttt{lem:vweak} of the paper.
+\end{lemma}
+\begin{proof}
+Since $U$ is open and $x_0\in U$, and $u,v$ are of class $C^2$ on $U$, both $u$ and $v$ are of
+class $C^2$ in a neighbourhood of $x_0$ (namely on $U$ itself); in particular both are
+differentiable at $x_0$. Each $\sigma^i$ is smooth, hence of class $C^1$ in a neighbourhood of
+$x_0$.
+
+\emph{Step 1: $\mathfrak{X}v(x_0)=\mathfrak{X}u(x_0)$.} Apply \noderef{HGradEqAtLocalMax} to
+$\sigma$, $u$, $v$ and $x_0$: its hypotheses are that $u$ and $v$ are differentiable at $x_0$ and
+that $x_0$ is a local maximum point of $u-v$, all of which hold. It gives
+$\mathfrak{X}u(x_0)=\mathfrak{X}v(x_0)$. Write $\xi_0:=\mathfrak{X}u(x_0)=\mathfrak{X}v(x_0)$; by
+hypothesis $\xi_0\neq0$.
+
+\emph{Step 2: $Du(x_0)=Dv(x_0)$.} Apply \noderef{FDerivEqAtLocalMaxSub} to $u$, $v$ and $x_0$: its
+hypotheses are that $u$ and $v$ are differentiable at $x_0$ and that $x_0$ is a local maximum point
+of $u-v$, all of which hold. It gives $Du(x_0)=Dv(x_0)$.
+
+\emph{Step 3: $D^2u(x_0)[w,w]\leq D^2v(x_0)[w,w]$ for every $w\in\mathbb{R}^n$.} Apply
+\noderef{SndFDerivLeAtLocalMaxSub} to $U$, $u$, $v$ and $x_0$: its hypotheses are that $U$ is open,
+that $x_0\in U$, that $u$ and $v$ are of class $C^2$ on $U$ and that $x_0$ is a local maximum point
+of $u-v$, all of which hold by hypothesis. It gives exactly the claim.
+
+\emph{Step 4: the symmetrized horizontal second derivatives.} Steps 2 and 3 are exactly the two
+hypotheses of \noderef{HGradHHessComparison}, whose remaining hypotheses ($u,v$ of class $C^2$
+near $x_0$, each $\sigma^i$ of class $C^1$ near $x_0$) also hold. It yields that
+$$P:=\mathfrak{X}\mathfrak{X}^\star v(x_0)-\mathfrak{X}\mathfrak{X}^\star u(x_0)$$
+is positive semi-definite, which is the second assertion.
+
+\emph{Step 5: the trace comparison.} Put $A:=a(\xi_0)$. Since $\xi_0\neq0$, $A$ is positive
+semi-definite by hypothesis; in particular $A$ is symmetric. Apply \noderef{TraceMonotone} with
+this $A$, with $X:=\mathfrak{X}\mathfrak{X}^\star v(x_0)$ and
+$Y:=\mathfrak{X}\mathfrak{X}^\star u(x_0)$: its hypotheses are that $A$ is positive semi-definite
+(just checked) and that $X-Y=P$ is positive semi-definite (Step 4). It gives
+\begin{equation*}\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}^\star u(x_0)\Big)\ \leq\
+\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}^\star v(x_0)\Big). \tag{2}\end{equation*}
+
+\emph{Step 6: symmetrization does not change the trace against a symmetric matrix.} The matrix
+$A=a(\xi_0)$ is symmetric (Step 5), so \noderef{TraceMulSymmetrizeEq} applies to $A$ and to every
+$B\in\mathbb{R}^{m\times m}$ and gives
+$\operatorname{Tr}\big(A\cdot\tfrac12(B+B^T)\big)=\operatorname{Tr}(AB)$. Taking
+$B=\mathfrak{X}\mathfrak{X}u(x_0)$ and then $B=\mathfrak{X}\mathfrak{X}v(x_0)$, and recalling that
+by the definition of the symmetrization (\noderef{HHessSym}) one has
+$\mathfrak{X}\mathfrak{X}^\star w(x_0)=\tfrac12\big(\mathfrak{X}\mathfrak{X}w(x_0)
++\mathfrak{X}\mathfrak{X}w(x_0)^T\big)$,
+\begin{equation*}\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}^\star u(x_0)\Big)
+=\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}u(x_0)\Big),\qquad
+\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}^\star v(x_0)\Big)
+=\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}v(x_0)\Big). \tag{3}\end{equation*}
+This is the paper's remark, just after \texttt{eq:maineq}, that the equation can equivalently be
+written with the symmetrized horizontal second derivative.
+
+\emph{Step 7: conclusion.} By the definition of the operator (\noderef{SubellipticOp}) and
+$\mathfrak{X}u(x_0)=\mathfrak{X}v(x_0)=\xi_0$,
+$$\mathcal{L}u(x_0)=-\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}u(x_0)\Big),\qquad
+\mathcal{L}v(x_0)=-\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}v(x_0)\Big).$$
+Combining this with (3) and then (2),
+$$-\mathcal{L}u(x_0)=\operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}^\star u(x_0)\Big)
+\ \leq\ \operatorname{Tr}\Big(A\,\mathfrak{X}\mathfrak{X}^\star v(x_0)\Big)=-\mathcal{L}v(x_0),$$
+that is, $\mathcal{L}v(x_0)\leq\mathcal{L}u(x_0)$.
+\end{proof}

@@ -1,0 +1,46 @@
+\begin{corollary}
+Let $n,m\in\mathbb{N}$, let $\sigma=(\sigma^1,\dots,\sigma^m)$ be smooth vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$ satisfying the H\"ormander rank condition, i.e.\ such that
+for every $x\in\mathbb{R}^n$ the linear span of $\{V(x):V\in\mathrm{HorFamily}(\sigma)\}$ is
+$\mathbb{R}^n$ (\noderef{HormanderRank}). Let $\beta\in\mathbb{R}$ and let
+$a:\mathbb{R}^m\to\mathbb{R}^{m\times m}$ be continuous on $\mathbb{R}^m\setminus\{0\}$ and such
+that, for every $\xi\in\mathbb{R}^m\setminus\{0\}$, the matrix $a(\xi)$ is symmetric and positive
+semi-definite, $\mathcal{E}(\xi)=\langle a(\xi)\xi,\xi\rangle>0$, and $a(t\xi)=t^\beta a(\xi)$ for
+every $t>0$. Let $\Omega\subset\mathbb{R}^n$ be a bounded open set and let
+$u,v:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ on $\Omega$ and continuous on $\overline\Omega$,
+with $u$ a classical sub-solution and $v$ a classical super-solution of $\mathcal{L}=0$ in
+$\Omega$ (\noderef{IsClassicalSubsol}, \noderef{IsClassicalSupersol}), and with $u\leq v$ on
+$\partial\Omega$. If $v$, or $u$, has no horizontal critical point in $\Omega$, i.e.\ if
+$$\mathfrak{X}v(x)\neq0\ \ \text{for every }x\in\Omega\qquad\text{or}\qquad
+\mathfrak{X}u(x)\neq0\ \ \text{for every }x\in\Omega,$$
+then $u\leq v$ in $\Omega$.
+\end{corollary}
+\begin{proof}
+All hypotheses of \noderef{ComparisonNondeg} except its non-degeneracy hypothesis are among our
+hypotheses verbatim (the data $\sigma,a,\beta,\Omega,u,v$, the smoothness of $\sigma$, the
+H\"ormander rank condition, the continuity, symmetry, positive semi-definiteness, ellipticity and
+homogeneity of $a$, the openness and boundedness of $\Omega$, the $C^2$ regularity of $u,v$ on
+$\Omega$ and their continuity on $\overline\Omega$, the sub- and super-solution properties, and the
+boundary inequality $u\leq v$ on $\partial\Omega$). So it suffices to verify its non-degeneracy
+hypothesis:
+\begin{equation*}\mathfrak{X}u(x)\neq0\qquad\text{for every }x\in\Omega\text{ with }(u-v)(x)=\sup_\Omega(u-v).
+\tag{$\ast$}\end{equation*}
+
+Let $x\in\Omega$ satisfy $(u-v)(y)\leq(u-v)(x)$ for every $y\in\Omega$. We distinguish the two
+alternatives of the hypothesis.
+
+\emph{Case 1: $\mathfrak{X}u(y)\neq0$ for every $y\in\Omega$.} Then in particular
+$\mathfrak{X}u(x)\neq0$, since $x\in\Omega$.
+
+\emph{Case 2: $\mathfrak{X}v(y)\neq0$ for every $y\in\Omega$.} Since $\Omega$ is open and
+$x\in\Omega$, the set $\Omega$ is a neighbourhood of $x$ on which $u-v\leq(u-v)(x)$; hence $x$ is a
+local maximum point of $u-v$. Moreover $u$ and $v$ are of class $C^2$ on the open set $\Omega$ and
+$x\in\Omega$, so both are differentiable at $x$. Therefore \noderef{HGradEqAtLocalMax} applies and
+gives
+$$\mathfrak{X}u(x)=\mathfrak{X}v(x),$$
+and the right-hand side is non-zero by the hypothesis of this case. Hence
+$\mathfrak{X}u(x)\neq0$.
+
+In both cases $\mathfrak{X}u(x)\neq0$, so $(\ast)$ holds. Applying
+\noderef{ComparisonNondeg} we conclude that $u\leq v$ in $\Omega$.
+\end{proof}

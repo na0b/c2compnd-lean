@@ -1,0 +1,22 @@
+\begin{lemma}
+Let $g:\mathbb{R}\to\mathbb{R}$ and $t_0\in\mathbb{R}$. Assume that $g$ is of class $C^2$ in a
+neighbourhood of $t_0$ and that $t_0$ is a local maximum point of $g$. Then
+$$g''(t_0)\leq0 .$$
+\end{lemma}
+\begin{proof}
+Suppose, for contradiction, that $g''(t_0)>0$.
+
+Since $g$ is of class $C^2$ near $t_0$, it is in particular differentiable at $t_0$, and $t_0$ is a
+local maximum point of $g$, so the first-order necessary condition (preamble) gives $g'(t_0)=0$.
+Since $g$ is continuous at $t_0$, $g'(t_0)=0$ and $g''(t_0)>0$, the sufficient direction of the
+second-derivative test (preamble) shows that $t_0$ is a \emph{local minimum} point of $g$.
+
+Thus $t_0$ is both a local maximum and a local minimum point of $g$: there are neighbourhoods
+$N_1,N_2$ of $t_0$ with $g\leq g(t_0)$ on $N_1$ and $g\geq g(t_0)$ on $N_2$. On the neighbourhood
+$N:=N_1\cap N_2$ of $t_0$ we therefore have $g\equiv g(t_0)$. Let $I\subset N$ be an open interval
+containing $t_0$. Then $g$ is constant on $I$, hence $g'\equiv0$ on $I$, i.e.\ $g'$ coincides with
+the zero function on a neighbourhood of $t_0$. Differentiating, $g''(t_0)=(g')'(t_0)=0$, which
+contradicts $g''(t_0)>0$.
+
+Hence $g''(t_0)\leq0$.
+\end{proof}

@@ -1,0 +1,40 @@
+\begin{lemma}
+Let $X$ be a topological space, let $K\subset X$ be non-empty and compact, let
+$f:X\to\mathbb{R}$ be continuous on $K$ and let $W\subset X$ be open. Assume that every maximum
+point of $f$ on $K$ lies in $W$, i.e.
+$$x\in K\ \text{ and }\ f(y)\leq f(x)\ \ \forall y\in K\qquad\Longrightarrow\qquad x\in W .$$
+Then there exists $\varepsilon>0$ with the following property: for every function
+$g:X\to\mathbb{R}$ such that $|g(x)-f(x)|\leq\varepsilon$ for all $x\in K$, every maximum point of
+$g$ on $K$ lies in $W$, i.e.
+$$x\in K\ \text{ and }\ g(y)\leq g(x)\ \ \forall y\in K\qquad\Longrightarrow\qquad x\in W .$$
+\end{lemma}
+\begin{proof}
+Since $K$ is non-empty and compact and $f$ is continuous on $K$, Weierstrass' theorem (preamble)
+provides $x_0\in K$ with $f(y)\leq f(x_0)$ for every $y\in K$. Write $M_0:=f(x_0)=\max_Kf$.
+
+\emph{Case 1: $K\setminus W=\emptyset$.} Then $K\subset W$, and $\varepsilon:=1$ works: for any
+$g$ and any $x\in K$ we have $x\in W$ outright.
+
+\emph{Case 2: $K\setminus W\neq\emptyset$.} Since $W$ is open, $K\setminus W=K\cap(X\setminus W)$
+is the intersection of the compact set $K$ with a closed set, hence compact; and it is non-empty.
+As $f$ is continuous on $K$ it is continuous on $K\setminus W\subset K$, so Weierstrass' theorem
+(preamble) provides $x_1\in K\setminus W$ with
+\begin{equation*}f(y)\leq f(x_1)\qquad\text{for every }y\in K\setminus W. \tag{1}\end{equation*}
+
+We claim $f(x_1)<M_0$. Since $x_1\in K$ we have $f(x_1)\leq M_0$. If $f(x_1)=M_0$, then for every
+$y\in K$ we get $f(y)\leq M_0=f(x_1)$, so $x_1$ is a maximum point of $f$ on $K$ and the hypothesis
+forces $x_1\in W$, contradicting $x_1\in K\setminus W$. Hence $f(x_1)<M_0$.
+
+Set
+$$\varepsilon:=\frac{M_0-f(x_1)}{3}\ >\ 0 .$$
+Let $g:X\to\mathbb{R}$ satisfy $|g(y)-f(y)|\leq\varepsilon$ for all $y\in K$, and let $x\in K$ be
+such that $g(y)\leq g(x)$ for all $y\in K$. Suppose, for contradiction, that $x\notin W$. Then
+$x\in K\setminus W$, so $f(x)\leq f(x_1)$ by (1), and therefore
+$$g(x)\ \leq\ f(x)+\varepsilon\ \leq\ f(x_1)+\varepsilon .$$
+On the other hand, taking $y=x_0\in K$ in the maximality of $x$ for $g$, and using
+$|g(x_0)-f(x_0)|\leq\varepsilon$,
+$$g(x)\ \geq\ g(x_0)\ \geq\ f(x_0)-\varepsilon\ =\ M_0-\varepsilon .$$
+Combining the two displays, $M_0-\varepsilon\leq f(x_1)+\varepsilon$, i.e.
+$$M_0-f(x_1)\ \leq\ 2\varepsilon\ =\ \tfrac{2}{3}\big(M_0-f(x_1)\big),$$
+whence $M_0-f(x_1)\leq0$, contradicting $f(x_1)<M_0$. Therefore $x\in W$, which is the assertion.
+\end{proof}

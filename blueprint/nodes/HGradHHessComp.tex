@@ -1,0 +1,56 @@
+\begin{lemma}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be vector fields $\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$, let
+$h\in C^2(\mathbb{R})$, let $w:\mathbb{R}^n\to\mathbb{R}$ and let $x\in\mathbb{R}^n$. Assume that
+$w$ is of class $C^2$ in a neighbourhood of $x$ and that every $\sigma^i$ is of class $C^1$ in a
+neighbourhood of $x$. Then
+$$\mathfrak{X}(h\circ w)(x)=h'\big(w(x)\big)\,\mathfrak{X}w(x)$$
+and
+$$\mathfrak{X}\mathfrak{X}(h\circ w)(x)=h'\big(w(x)\big)\,\mathfrak{X}\mathfrak{X}w(x)
++h''\big(w(x)\big)\,\mathfrak{X}w(x)\otimes\mathfrak{X}w(x),$$
+where $\xi\otimes\eta\in\mathbb{R}^{m\times m}$ denotes the matrix with entries
+$(\xi\otimes\eta)_{i,j}=\xi_i\,\eta_j$. These are the two identities
+$\mathfrak{X}(h\circ w)=h'(w)\mathfrak{X}w$ and $\mathfrak{X}\mathfrak{X}(h\circ
+w)=h'(w)\mathfrak{X}\mathfrak{X}w+h''(w)\,\mathfrak{X}w\otimes\mathfrak{X}w$ with which the proof
+of Lemma \texttt{lem:tech} of the paper begins.
+\end{lemma}
+\begin{proof}
+Write $t:=h'(w(x))$, $s:=h''(w(x))$ and $\xi:=\mathfrak{X}w(x)$.
+
+\emph{Step 1: the first identity.} Let $V$ be an open neighbourhood of $x$ on which $w$ is of class
+$C^2$. Since $h$ is differentiable on $\mathbb{R}$ and $w$ is differentiable on $V$, the chain
+rule gives that $h\circ w$ is differentiable on $V$ with
+\begin{equation*}D(h\circ w)(y)=h'\big(w(y)\big)\,Dw(y)\qquad\text{for every }y\in V. \tag{1}\end{equation*}
+Evaluating (1) at $y=x$ and at the vector $\sigma^i(x)$, and using the definition of
+\noderef{HGrad},
+$$\big(\mathfrak{X}(h\circ w)(x)\big)_i=D(h\circ w)(x)\big[\sigma^i(x)\big]
+=t\,Dw(x)\big[\sigma^i(x)\big]=t\,\xi_i,$$
+for every $i$, which is the first identity.
+
+\emph{Step 2: the second derivative of $h\circ w$.} Since $h\in C^2(\mathbb{R})$ and $w$ is of
+class $C^2$ on $V$, the composition $h\circ w$ is of class $C^2$ on $V$, hence in a neighbourhood
+of $x$. Moreover $h\in C^2(\mathbb{R})$ and $w$ is of class $C^2$ in a neighbourhood of $x$, which
+are the hypotheses of \noderef{SndFDerivCompScalar}; applied to $h$, $w$ and $x$ it gives
+\begin{equation*}D^2(h\circ w)(x)[z_1,z_2]=s\,Dw(x)[z_1]\,Dw(x)[z_2]+t\,D^2w(x)[z_1,z_2] \tag{2}\end{equation*}
+for all $z_1,z_2\in\mathbb{R}^n$.
+
+\emph{Step 3: the second identity.} Fix $i,j$. By Step 2 the function $h\circ w$ is of class $C^2$
+in a neighbourhood of $x$, and $\sigma^i$ is of class $C^1$ in a neighbourhood of $x$; so
+\noderef{HHessEntryFormula} applies to $h\circ w$ and gives
+$$\big(\mathfrak{X}\mathfrak{X}(h\circ w)(x)\big)_{i,j}
+=D^2(h\circ w)(x)\big[\sigma^j(x),\sigma^i(x)\big]
++D(h\circ w)(x)\big[D\sigma^i(x)\,\sigma^j(x)\big].$$
+By (2) with $z_1=\sigma^j(x)$, $z_2=\sigma^i(x)$, and by the definition of \noderef{HGrad}, the
+first summand equals
+$$s\,Dw(x)\big[\sigma^j(x)\big]\,Dw(x)\big[\sigma^i(x)\big]
++t\,D^2w(x)\big[\sigma^j(x),\sigma^i(x)\big]
+=s\,\xi_j\,\xi_i+t\,D^2w(x)\big[\sigma^j(x),\sigma^i(x)\big],$$
+while by (1) the second summand equals
+$t\,Dw(x)\big[D\sigma^i(x)\,\sigma^j(x)\big]$. Adding and applying
+\noderef{HHessEntryFormula} to $w$ itself (which is of class $C^2$ near $x$),
+$$\big(\mathfrak{X}\mathfrak{X}(h\circ w)(x)\big)_{i,j}
+=t\Big(D^2w(x)\big[\sigma^j(x),\sigma^i(x)\big]+Dw(x)\big[D\sigma^i(x)\,\sigma^j(x)\big]\Big)
++s\,\xi_i\,\xi_j
+=t\,\big(\mathfrak{X}\mathfrak{X}w(x)\big)_{i,j}+s\,\xi_i\,\xi_j .$$
+Since $(\xi\otimes\xi)_{i,j}=\xi_i\xi_j$, this is precisely the second identity entrywise, and
+hence as an identity of matrices.
+\end{proof}

@@ -1,0 +1,150 @@
+\documentclass[11pt]{amsart}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amssymb,amsmath,mathtools,mathrsfs}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,\mathrm d}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{helper}[theorem]{Lemma}
+\newcommand{\fint}{\mathop{\ooalign{$\int$\cr$-$}}}
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\X}{\mathfrak{X}}
+\providecommand{\XX}{\X\X}
+\providecommand{\LL}{\mathcal{L}}
+\providecommand{\E}{\mathcal{E}}
+\providecommand{\Om}{\Omega}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator*{\argmax}{argmax}
+\providecommand{\Penv}{\mathcal{P}}
+\providecommand{\Menv}{\mathcal{M}}
+\providecommand{\Cenv}{\mathcal{C}}
+\providecommand{\Senv}{\mathcal{S}}
+\providecommand{\Aclass}{\mathcal{A}}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\osc}{osc}
+\providecommand{\noderef}[1]{\hyperref[node:#1]{\texttt{\detokenize{#1}}}}
+
+
+
+\title[Blueprint of the Lean formalization]{A note on the comparison principle for degenerate sub-elliptic equations: blueprint of the Lean formalization}
+\author{Juan J. Manfredi}
+\author{Shirsho Mukherjee}
+
+\begin{document}
+\begin{abstract}
+This document collects the natural-language statements and detailed proofs that accompany the Lean~4 formalization of Theorem~1.3 and Corollary~1.4 of J.~J.~Manfredi and S.~Mukherjee, \emph{A note on the comparison principle for degenerate sub-elliptic equations}.
+The results are formalized for an arbitrary family of smooth vector fields on $\mathbb{R}^n$ satisfying H\"ormander's rank condition; the paper's setting, a basis of the first layer of a Carnot group, is a special case.
+The mathematics is that of Section~3.1 of the paper; this document only reorganizes it into the units of the formalization.
+Each subsection corresponds to the Lean declaration of the same name in the directory \texttt{C2CompND/}; cross-references point to the results that a proof uses.
+Section~\ref{sec:main} lists the formalized results of the paper.
+Within each section, items appear in dependency order.
+\end{abstract}
+\maketitle
+\tableofcontents
+
+\section{Definitions}
+\subsection{\texorpdfstring{\texttt{Preamble}}{Preamble}}\label{node:Preamble}
+\input{nodes/Preamble}
+
+\subsection{\texorpdfstring{\texttt{HGrad}}{HGrad}}\label{node:HGrad}
+\input{nodes/HGrad}
+
+\subsection{\texorpdfstring{\texttt{HHess}}{HHess}}\label{node:HHess}
+\input{nodes/HHess}
+
+\subsection{\texorpdfstring{\texttt{HHessSym}}{HHessSym}}\label{node:HHessSym}
+\input{nodes/HHessSym}
+
+\subsection{\texorpdfstring{\texttt{SubellipticOp}}{SubellipticOp}}\label{node:SubellipticOp}
+\input{nodes/SubellipticOp}
+
+\subsection{\texorpdfstring{\texttt{EllipticityFn}}{EllipticityFn}}\label{node:EllipticityFn}
+\input{nodes/EllipticityFn}
+
+\subsection{\texorpdfstring{\texttt{IsClassicalSubsol}}{IsClassicalSubsol}}\label{node:IsClassicalSubsol}
+\input{nodes/IsClassicalSubsol}
+
+\subsection{\texorpdfstring{\texttt{IsClassicalSupersol}}{IsClassicalSupersol}}\label{node:IsClassicalSupersol}
+\input{nodes/IsClassicalSupersol}
+
+\subsection{\texorpdfstring{\texttt{HorFamily}}{HorFamily}}\label{node:HorFamily}
+\input{nodes/HorFamily}
+
+\subsection{\texorpdfstring{\texttt{HormanderRank}}{HormanderRank}}\label{node:HormanderRank}
+\input{nodes/HormanderRank}
+
+\section{Lemmas}
+\subsection{\texorpdfstring{\texttt{FDerivEqAtLocalMaxSub}}{FDerivEqAtLocalMaxSub}}\label{node:FDerivEqAtLocalMaxSub}
+\input{nodes/FDerivEqAtLocalMaxSub}
+
+\subsection{\texorpdfstring{\texttt{HGradEqAtLocalMax}}{HGradEqAtLocalMax}}\label{node:HGradEqAtLocalMax}
+\input{nodes/HGradEqAtLocalMax}
+
+\subsection{\texorpdfstring{\texttt{DerivDerivRestrictLine}}{DerivDerivRestrictLine}}\label{node:DerivDerivRestrictLine}
+\input{nodes/DerivDerivRestrictLine}
+
+\subsection{\texorpdfstring{\texttt{SecondDerivTestOneDim}}{SecondDerivTestOneDim}}\label{node:SecondDerivTestOneDim}
+\input{nodes/SecondDerivTestOneDim}
+
+\subsection{\texorpdfstring{\texttt{SndFDerivNonposAtLocalMax}}{SndFDerivNonposAtLocalMax}}\label{node:SndFDerivNonposAtLocalMax}
+\input{nodes/SndFDerivNonposAtLocalMax}
+
+\subsection{\texorpdfstring{\texttt{SndFDerivLeAtLocalMaxSub}}{SndFDerivLeAtLocalMaxSub}}\label{node:SndFDerivLeAtLocalMaxSub}
+\input{nodes/SndFDerivLeAtLocalMaxSub}
+
+\subsection{\texorpdfstring{\texttt{HHessEntryFormula}}{HHessEntryFormula}}\label{node:HHessEntryFormula}
+\input{nodes/HHessEntryFormula}
+
+\subsection{\texorpdfstring{\texttt{PosSemidefSymmQuadForm}}{PosSemidefSymmQuadForm}}\label{node:PosSemidefSymmQuadForm}
+\input{nodes/PosSemidefSymmQuadForm}
+
+\subsection{\texorpdfstring{\texttt{HGradHHessComparison}}{HGradHHessComparison}}\label{node:HGradHHessComparison}
+\input{nodes/HGradHHessComparison}
+
+\subsection{\texorpdfstring{\texttt{TraceMonotone}}{TraceMonotone}}\label{node:TraceMonotone}
+\input{nodes/TraceMonotone}
+
+\subsection{\texorpdfstring{\texttt{TraceMulSymmetrizeEq}}{TraceMulSymmetrizeEq}}\label{node:TraceMulSymmetrizeEq}
+\input{nodes/TraceMulSymmetrizeEq}
+
+\subsection{\texorpdfstring{\texttt{LocalMaxOpIneq}}{LocalMaxOpIneq}}\label{node:LocalMaxOpIneq}
+\input{nodes/LocalMaxOpIneq}
+
+\subsection{\texorpdfstring{\texttt{SndFDerivCompScalar}}{SndFDerivCompScalar}}\label{node:SndFDerivCompScalar}
+\input{nodes/SndFDerivCompScalar}
+
+\subsection{\texorpdfstring{\texttt{HGradHHessComp}}{HGradHHessComp}}\label{node:HGradHHessComp}
+\input{nodes/HGradHHessComp}
+
+\subsection{\texorpdfstring{\texttt{PerturbationIdentity}}{PerturbationIdentity}}\label{node:PerturbationIdentity}
+\input{nodes/PerturbationIdentity}
+
+\subsection{\texorpdfstring{\texttt{MaxSetStability}}{MaxSetStability}}\label{node:MaxSetStability}
+\input{nodes/MaxSetStability}
+
+\subsection{\texorpdfstring{\texttt{HGradContinuousOn}}{HGradContinuousOn}}\label{node:HGradContinuousOn}
+\input{nodes/HGradContinuousOn}
+
+\subsection{\texorpdfstring{\texttt{QuadraticPerturbDeriv}}{QuadraticPerturbDeriv}}\label{node:QuadraticPerturbDeriv}
+\input{nodes/QuadraticPerturbDeriv}
+
+\section{Main results}\label{sec:main}
+\subsection{\texorpdfstring{\texttt{ComparisonNondeg} (paper, Theorem 1.3)}{ComparisonNondeg}}\label{node:ComparisonNondeg}
+\input{nodes/ComparisonNondeg}
+
+\subsection{\texorpdfstring{\texttt{CorNocritComparison} (paper, Corollary 1.4, comparison)}{CorNocritComparison}}\label{node:CorNocritComparison}
+\input{nodes/CorNocritComparison}
+
+\subsection{\texorpdfstring{\texttt{CorNocritUniqueness} (paper, Corollary 1.4, uniqueness)}{CorNocritUniqueness}}\label{node:CorNocritUniqueness}
+\input{nodes/CorNocritUniqueness}
+
+
+\end{document}

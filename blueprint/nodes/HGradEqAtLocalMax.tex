@@ -1,0 +1,19 @@
+\begin{lemma}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be vector fields $\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$, let
+$u,v:\mathbb{R}^n\to\mathbb{R}$ and let $x_0\in\mathbb{R}^n$. Assume that $u$ and $v$ are
+differentiable at $x_0$ and that $x_0$ is a local maximum point of $u-v$. Then
+$$\mathfrak{X}u(x_0)=\mathfrak{X}v(x_0).$$
+\end{lemma}
+\begin{proof}
+Since $u$ and $v$ are differentiable at $x_0$ and $x_0$ is a local maximum point of $u-v$, the
+hypotheses of \noderef{FDerivEqAtLocalMaxSub} are met, and it gives
+$$Du(x_0)=Dv(x_0)$$
+as linear functionals on $\mathbb{R}^n$.
+
+Evaluating this equality of functionals at the vector $\sigma^i(x_0)\in\mathbb{R}^n$ gives, for
+every $i\in\{1,\dots,m\}$,
+$$\big(\mathfrak{X}u(x_0)\big)_i=Du(x_0)\big[\sigma^i(x_0)\big]
+=Dv(x_0)\big[\sigma^i(x_0)\big]=\big(\mathfrak{X}v(x_0)\big)_i,$$
+by the definition of the horizontal gradient (\noderef{HGrad}). Hence
+$\mathfrak{X}u(x_0)=\mathfrak{X}v(x_0)$.
+\end{proof}

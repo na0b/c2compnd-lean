@@ -1,0 +1,20 @@
+\begin{lemma}
+Let $u,v:\mathbb{R}^n\to\mathbb{R}$ and let $x_0\in\mathbb{R}^n$. Assume that $u$ is differentiable
+at $x_0$, that $v$ is differentiable at $x_0$, and that $x_0$ is a local maximum point of $u-v$.
+Then
+$$Du(x_0)=Dv(x_0)$$
+as linear functionals on $\mathbb{R}^n$. This is the first clause of the sentence opening the proof
+of Lemma \texttt{lem:vweak} of the paper, namely that the interior maximality at $x_0$ implies
+$\nabla u(x_0)=\nabla v(x_0)$; the paper derives the horizontal identity
+$\mathfrak{X}u(x_0)=\mathfrak{X}v(x_0)$ from it through \texttt{eq:sigrad}.
+\end{lemma}
+\begin{proof}
+Since $u$ and $v$ are differentiable at $x_0$, so is $u-v$, and the derivative of a difference is
+the difference of the derivatives:
+$$D(u-v)(x_0)=Du(x_0)-Dv(x_0).$$
+As $x_0$ is a local maximum point of $u-v$, the first-order necessary condition at a local extremum
+(preamble) applied to $f:=u-v$ gives
+$$D(u-v)(x_0)=0.$$
+Combining the two displays, $Du(x_0)-Dv(x_0)=0$ in the vector space of linear functionals on
+$\mathbb{R}^n$, and therefore $Du(x_0)=Dv(x_0)$.
+\end{proof}

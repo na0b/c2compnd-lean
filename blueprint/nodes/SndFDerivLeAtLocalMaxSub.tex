@@ -1,0 +1,35 @@
+\begin{lemma}
+Let $U\subset\mathbb{R}^n$ be open, let $u,v:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ on $U$
+and let $x_0\in U$ be a local maximum point of $u-v$. Then
+$$D^2u(x_0)[w,w]\ \leq\ D^2v(x_0)[w,w]\qquad\text{for every }w\in\mathbb{R}^n,$$
+i.e.\ $D^2u(x_0)\leq D^2v(x_0)$. This is the second-order clause of the sentence opening the proof
+of Lemma \texttt{lem:vweak} of the paper, that the interior maximality at $x_0$ implies
+$\nabla u(x_0)=\nabla v(x_0)$ and $D^2u(x_0)\leq D^2v(x_0)$; the first-order clause of that same
+sentence is the node \texttt{FDerivEqAtLocalMaxSub}.
+\end{lemma}
+\begin{proof}
+Put $f:=u-v$. Since $U$ is open, $x_0\in U$ and $u,v$ are of class $C^2$ on $U$, both $u$ and $v$
+are of class $C^2$ in a neighbourhood of $x_0$, namely on $U$ itself; hence so is $f$, and in
+particular $u$, $v$ and $f$ are differentiable at every point of $U$.
+
+\emph{Step 1: the first derivatives subtract on $U$.} For every $y\in U$ both $u$ and $v$ are
+differentiable at $y$, so $f=u-v$ is differentiable at $y$ with
+\begin{equation*}Df(y)=Du(y)-Dv(y)\qquad\text{for every }y\in U. \tag{1}\end{equation*}
+Since $U$ is a neighbourhood of $x_0$, the maps $y\mapsto Df(y)$ and $y\mapsto Du(y)-Dv(y)$
+therefore coincide on a neighbourhood of $x_0$.
+
+\emph{Step 2: the second derivatives subtract at $x_0$.} Because $u$ and $v$ are of class $C^2$ in
+a neighbourhood of $x_0$, the maps $y\mapsto Du(y)$ and $y\mapsto Dv(y)$ are differentiable at
+$x_0$, hence so is their difference. By Step 1 the map $y\mapsto Df(y)$ agrees with that difference
+on a neighbourhood of $x_0$, so it has the same derivative at $x_0$, and by linearity of the
+derivative
+\begin{equation*}D^2f(x_0)[z_1,z_2]=D^2u(x_0)[z_1,z_2]-D^2v(x_0)[z_1,z_2]\qquad
+\text{for all }z_1,z_2\in\mathbb{R}^n. \tag{2}\end{equation*}
+
+\emph{Step 3: conclusion.} The function $f$ is of class $C^2$ in a neighbourhood of $x_0$ and has a
+local maximum at $x_0$, so \noderef{SndFDerivNonposAtLocalMax} applies to $f$ and gives
+$$D^2f(x_0)[w,w]\leq0\qquad\text{for every }w\in\mathbb{R}^n .$$
+Fix $w\in\mathbb{R}^n$ and combine this with (2) taken at $z_1=z_2=w$:
+$$D^2u(x_0)[w,w]-D^2v(x_0)[w,w]=D^2f(x_0)[w,w]\leq0,$$
+that is, $D^2u(x_0)[w,w]\leq D^2v(x_0)[w,w]$.
+\end{proof}

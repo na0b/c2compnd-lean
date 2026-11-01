@@ -1,0 +1,32 @@
+\begin{lemma}
+Let $n\in\mathbb{N}$, let $f:\mathbb{R}^n\to\mathbb{R}$, let $x_0\in\mathbb{R}^n$ and let
+$w\in\mathbb{R}^n$. Assume that $f$ is of class $C^2$ in a neighbourhood of $x_0$, and let
+$g:\mathbb{R}\to\mathbb{R}$, $g(t):=f(x_0+tw)$, be the restriction of $f$ to the line through
+$x_0$ in the direction $w$. Then
+$$g''(0)=D^2f(x_0)[w,w].$$
+\end{lemma}
+\begin{proof}
+Let $\gamma(t):=x_0+tw$, so that $g=f\circ\gamma$. The map $\gamma:\mathbb{R}\to\mathbb{R}^n$ is
+affine, hence smooth, with $\gamma(0)=x_0$ and $\gamma'(t)=w$ for every $t$; being continuous with
+$\gamma(0)=x_0$, it satisfies $\gamma(t)\to x_0$ as $t\to0$.
+
+\emph{The first derivative of $g$ near $0$.} By hypothesis there is an open set $V\ni x_0$ on which
+$f$ is of class $C^2$; in particular $f$ is differentiable at every point of $V$. Since
+$\gamma(t)\to x_0$ as $t\to0$, there is a neighbourhood $N$ of $0$ with $\gamma(t)\in V$ for every
+$t\in N$. For such $t$ the chain rule applies to $f\circ\gamma$ at $t$ and gives
+\begin{equation*}g'(t)=Df(\gamma(t))\big[\gamma'(t)\big]=Df(x_0+tw)[w]\qquad\text{for every }t\in N. \tag{1}\end{equation*}
+
+\emph{Differentiating once more at $0$.} Since $f$ is of class $C^2$ on $V$, the map
+$y\mapsto Df(y)$ is differentiable at $x_0$, with derivative the linear map
+$z\mapsto D\big(y\mapsto Df(y)\big)(x_0)[z]$. Composing it with the affine map $\gamma$ (chain
+rule again, using $\gamma(0)=x_0$ and $\gamma'(0)=w$), the map $t\mapsto Df(x_0+tw)$ is
+differentiable at $t=0$ with derivative $D\big(y\mapsto Df(y)\big)(x_0)[w]$. Composing further
+with the evaluation map $\Lambda\mapsto\Lambda[w]$, which is linear and hence smooth, the
+real-valued function $t\mapsto Df(x_0+tw)[w]$ is differentiable at $t=0$ with derivative
+$$\Big(D\big(y\mapsto Df(y)\big)(x_0)[w]\Big)[w]=D^2f(x_0)[w,w],$$
+the last equality being the definition of $D^2f(x_0)$ fixed in the preamble.
+
+\emph{Conclusion.} By (1) the functions $g'$ and $t\mapsto Df(x_0+tw)[w]$ agree on the
+neighbourhood $N$ of $0$, so they have the same derivative at $0$. Hence $g'$ is differentiable at
+$0$ and $g''(0)=D^2f(x_0)[w,w]$.
+\end{proof}

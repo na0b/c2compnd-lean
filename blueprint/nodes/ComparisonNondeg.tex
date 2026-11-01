@@ -1,0 +1,137 @@
+\begin{theorem}
+Let $n,m\in\mathbb{N}$, let $\sigma=(\sigma^1,\dots,\sigma^m)$ be smooth vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$ satisfying the H\"ormander rank condition, i.e.\ such that
+for every $x\in\mathbb{R}^n$ the linear span of $\{V(x):V\in\mathrm{HorFamily}(\sigma)\}$ is
+$\mathbb{R}^n$ (\noderef{HormanderRank}), and let $X_i=\sigma^i(x)\cdot\nabla$. Let
+$\beta\in\mathbb{R}$ and let $a:\mathbb{R}^m\to\mathbb{R}^{m\times m}$,
+$a(\xi)=(a_{i,j}(\xi))_{i,j}$, be continuous on $\mathbb{R}^m\setminus\{0\}$ and such that, for
+every $\xi\in\mathbb{R}^m\setminus\{0\}$, the matrix $a(\xi)$ is symmetric and positive
+semi-definite,
+$$\mathcal{E}(\xi)=\big\langle a(\xi)\xi,\xi\big\rangle>0,$$
+and $a(t\xi)=t^\beta a(\xi)$ for every $t>0$. Let $\Omega\subset\mathbb{R}^n$ be a bounded open
+set and let $u,v:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ on $\Omega$ and continuous on
+$\overline\Omega$. Assume that
+$$\mathcal{L}u\leq0\leq\mathcal{L}v\quad\text{in }\Omega$$
+in the classical sense, i.e.\ $u$ is a classical sub-solution and $v$ a classical super-solution of
+$\mathcal{L}=0$ in $\Omega$ (\noderef{IsClassicalSubsol}, \noderef{IsClassicalSupersol}), and that
+$u\leq v$ on $\partial\Omega$. If
+$$\mathfrak{X}u(x)\neq0\qquad\text{for every }x\in\operatorname*{argmax}_\Omega(u-v)
+:=\Big\{x\in\Omega:\ (u-v)(x)=\sup_\Omega(u-v)\Big\},$$
+then $u\leq v$ in $\Omega$.
+\end{theorem}
+\begin{proof}
+Suppose, for contradiction, that there is $\bar x\in\Omega$ with $u(\bar x)>v(\bar x)$.
+
+Put $K:=\overline\Omega$ and $f:=u-v$. Since $\Omega$ is bounded, $K$ is compact (preamble), and
+$K\neq\emptyset$ because $\bar x\in\Omega\subset K$. The function $f$ is continuous on $K$, since
+$u$ and $v$ are. By Weierstrass' theorem (preamble) $f$ attains its maximum over $K$, and
+\begin{equation*}M_0:=\max_Kf\ \geq\ f(\bar x)=u(\bar x)-v(\bar x)\ >\ 0. \tag{1}\end{equation*}
+
+\emph{Step 1: every maximum point of $f$ on $K$ lies in $U:=\{x\in\Omega:\mathfrak{X}u(x)\neq0\}$.}
+Let $x\in K$ be such that $f(y)\leq f(x)$ for all $y\in K$; then $f(x)=M_0>0$ by (1). Since
+$K=\overline\Omega=\Omega\cup\partial\Omega$ (preamble), either $x\in\Omega$ or
+$x\in\partial\Omega$; the latter is impossible because $f=u-v\leq0$ on $\partial\Omega$ by the
+boundary hypothesis, while $f(x)>0$. Hence $x\in\Omega$. Moreover $\Omega\subset K$, so
+$f(y)\leq f(x)$ for every $y\in\Omega$, i.e.\ $(u-v)(x)=\sup_\Omega(u-v)$ and
+$x\in\operatorname*{argmax}_\Omega(u-v)$. The non-degeneracy hypothesis then gives
+$\mathfrak{X}u(x)\neq0$, so $x\in U$.
+
+\emph{Step 2: $U$ is open.} Since $u$ is of class $C^2$ on the open set $\Omega$, the map
+$y\mapsto Du(y)$ is continuous on $\Omega$; each $\sigma^i$ is smooth, hence continuous. By the
+definition of the horizontal gradient (\noderef{HGrad}), its $i$-th component is
+$\big(\mathfrak{X}u(y)\big)_i=Du(y)\big[\sigma^i(y)\big]$; this is continuous on $\Omega$, being
+the composition of the map $y\mapsto\big(Du(y),\sigma^i(y)\big)$, continuous on $\Omega$, with the
+continuous evaluation pairing. As this holds for every $i\in\{1,\dots,m\}$, the map
+$\mathfrak{X}u:\mathbb{R}^n\to\mathbb{R}^m$ is continuous on $\Omega$. (This is the paper's step
+``by assumption and continuity of $\mathfrak{X}u$'' at the start of the proof of Proposition
+\texttt{lem:comp0}.)
+
+Now $\mathbb{R}^m\setminus\{0\}$ is open, and
+$$U=\Omega\cap(\mathfrak{X}u)^{-1}\big(\mathbb{R}^m\setminus\{0\}\big)$$
+is precisely the preimage of $\mathbb{R}^m\setminus\{0\}$ under the restriction of
+$\mathfrak{X}u$ to $\Omega$. Since that restriction is continuous, $U$ is open in the subspace
+topology of $\Omega$, i.e.\ $U=\Omega\cap V$ for some set $V$ open in $\mathbb{R}^n$. Since
+$\Omega$ is itself open in $\mathbb{R}^n$, the intersection $U=\Omega\cap V$ is open in
+$\mathbb{R}^n$.
+
+\emph{Step 3: the perturbed sub-solution.} Let $u_0:=\min_Ku$ and $u_1:=\max_Ku$, which exist by
+Weierstrass' theorem (preamble). For $\lambda>0$ set
+$$h_\lambda(s):=s+\lambda(s-u_0)^2,\qquad u_\lambda:=h_\lambda\circ u .$$
+Then $h_\lambda$ is a polynomial, hence $h_\lambda\in C^2(\mathbb{R})$, with
+$$h_\lambda'(s)=1+2\lambda(s-u_0),\qquad h_\lambda''(s)=2\lambda\quad\text{for all }
+s\in\mathbb{R}.$$
+For $x\in K$ we have $u_0\leq u(x)\leq u_1$, hence $u(x)-u_0\geq0$ and therefore
+\begin{equation*}h_\lambda'\big(u(x)\big)\geq1,\qquad
+0\ \leq\ u_\lambda(x)-u(x)=\lambda\big(u(x)-u_0\big)^2\ \leq\ \lambda\,(u_1-u_0)^2
+\qquad(x\in K). \tag{2}\end{equation*}
+Moreover $u_\lambda=h_\lambda\circ u$ is of class $C^2$ on $\Omega$ (composition of the $C^\infty$
+function $h_\lambda$ with the $C^2$ function $u$) and continuous on $K$.
+
+\emph{Step 4: choice of $\lambda$ and of the perturbed maximum point.} The hypotheses of
+\noderef{MaxSetStability} hold with the topological space $\mathbb{R}^n$, the non-empty compact
+set $K$, the function $f=u-v$ (continuous on $K$) and the open set $W:=U$ (open by Step 2): by
+Step 1, every maximum point of $f$ on $K$ lies in $U$. Hence there is $\varepsilon>0$ such that
+\begin{equation*}\text{for every }g:\mathbb{R}^n\to\mathbb{R}\text{ with }|g-f|\leq\varepsilon\text{ on }K,
+\text{ every maximum point of }g\text{ on }K\text{ lies in }U. \tag{3}\end{equation*}
+Fix $\lambda>0$ with $\lambda(u_1-u_0)^2\leq\varepsilon$: if $u_1=u_0$ take $\lambda=1$, and
+otherwise take $\lambda=\varepsilon/(u_1-u_0)^2>0$. Put $g:=u_\lambda-v$. By (2), for every
+$x\in K$,
+$$|g(x)-f(x)|=\big|u_\lambda(x)-u(x)\big|\leq\lambda(u_1-u_0)^2\leq\varepsilon .$$
+Since $g$ is continuous on the non-empty compact set $K$, Weierstrass' theorem (preamble) gives
+$x_\lambda\in K$ with $g(y)\leq g(x_\lambda)$ for every $y\in K$. By (3), $x_\lambda\in U$, that is
+\begin{equation*}x_\lambda\in\Omega\qquad\text{and}\qquad\mathfrak{X}u(x_\lambda)\neq0. \tag{4}\end{equation*}
+
+\emph{Step 5: $x_\lambda$ is a local maximum point of $u_\lambda-v$.} The set $\Omega$ is open and
+contains $x_\lambda$ by (4), and $\Omega\subset K$, so $g(y)\leq g(x_\lambda)$ for every
+$y\in\Omega$. Thus $\Omega$ is a neighbourhood of $x_\lambda$ on which
+$u_\lambda-v\leq(u_\lambda-v)(x_\lambda)$, i.e.\ $x_\lambda$ is a local maximum point of
+$u_\lambda-v$.
+
+\emph{Step 6: $\mathcal{L}u_\lambda(x_\lambda)\geq0$.} Set $t:=h_\lambda'\big(u(x_\lambda)\big)$;
+by (2) and $x_\lambda\in K$ we have $t\geq1>0$. Since $u$ is of class $C^2$ on the open set
+$\Omega$ and $x_\lambda\in\Omega$, $u$ is of class $C^2$ in a neighbourhood of $x_\lambda$; each
+$\sigma^i$ is smooth, hence of class $C^1$ near $x_\lambda$; and $h_\lambda\in C^2(\mathbb{R})$.
+So the first identity of \noderef{HGradHHessComp} gives
+\begin{equation*}\mathfrak{X}u_\lambda(x_\lambda)=t\,\mathfrak{X}u(x_\lambda)\ \neq\ 0, \tag{5}\end{equation*}
+because $t\neq0$ and $\mathfrak{X}u(x_\lambda)\neq0$ by (4).
+
+Now apply \noderef{LocalMaxOpIneq} with the open set $\Omega$, the smooth frame $\sigma$, the
+matrix field $a$ (positive semi-definite away from $0$ by hypothesis), the functions $u_\lambda$
+and $v$ (both of class $C^2$ on $\Omega$, by Step 3 and by hypothesis) and the point
+$x_\lambda\in\Omega$, which is a local maximum point of $u_\lambda-v$ by Step 5 and satisfies
+$\mathfrak{X}u_\lambda(x_\lambda)\neq0$ by (5). It gives
+$$\mathfrak{X}v(x_\lambda)=\mathfrak{X}u_\lambda(x_\lambda)\neq0\qquad\text{and}\qquad
+\mathcal{L}v(x_\lambda)\leq\mathcal{L}u_\lambda(x_\lambda).$$
+Since $v$ is a classical super-solution in $\Omega$, $x_\lambda\in\Omega$ and
+$\mathfrak{X}v(x_\lambda)\neq0$, the definition of \noderef{IsClassicalSupersol} gives
+$\mathcal{L}v(x_\lambda)\geq0$. Therefore
+\begin{equation*}\mathcal{L}u_\lambda(x_\lambda)\ \geq\ 0. \tag{6}\end{equation*}
+
+\emph{Step 7: $\mathcal{L}u_\lambda(x_\lambda)<0$.} Put $\xi:=\mathfrak{X}u(x_\lambda)\neq0$.
+Since $u$ is a classical sub-solution in $\Omega$, $x_\lambda\in\Omega$ and $\xi\neq0$, the
+definition of \noderef{IsClassicalSubsol} gives
+\begin{equation*}\mathcal{L}u(x_\lambda)\ \leq\ 0. \tag{7}\end{equation*}
+Apply \noderef{PerturbationIdentity} with the open set $\Omega$, the smooth frame $\sigma$, the
+matrix field $a$ and the exponent $\beta$ (the homogeneity hypothesis $a(t\xi)=t^\beta a(\xi)$ for
+$t>0$, $\xi\neq0$ being part of our assumptions), with $h=h_\lambda\in C^2(\mathbb{R})$, $w=u$ of
+class $C^2$ on $\Omega$, and $x=x_\lambda\in\Omega$, where
+$\mathfrak{X}u(x_\lambda)=\xi\neq0$ and $h_\lambda'\big(u(x_\lambda)\big)=t\geq1>0$. Using
+$h_\lambda''\equiv2\lambda$, it gives
+\begin{equation*}\mathcal{L}u_\lambda(x_\lambda)=-t^{\beta}\Big[2\lambda\,\mathcal{E}(\xi)
+-t\,\mathcal{L}u(x_\lambda)\Big]. \tag{8}\end{equation*}
+We estimate the bracket from below. First, the function $\mathcal{E}$ appearing in the conclusion
+of \noderef{PerturbationIdentity} is the ellipticity function of \noderef{EllipticityFn}, namely
+$\mathcal{E}(\zeta)=\langle a(\zeta)\zeta,\zeta\rangle$, which is exactly the function displayed in
+the ellipticity hypothesis of the present statement; since $\xi\neq0$, that hypothesis gives
+$\mathcal{E}(\xi)>0$. Together with $\lambda>0$ this yields $2\lambda\,\mathcal{E}(\xi)>0$.
+Second, $t>0$ and $\mathcal{L}u(x_\lambda)\leq0$ by (7), so
+$-t\,\mathcal{L}u(x_\lambda)\geq0$. Hence
+$$2\lambda\,\mathcal{E}(\xi)-t\,\mathcal{L}u(x_\lambda)\ \geq\ 2\lambda\,\mathcal{E}(\xi)\ >\ 0 .$$
+Since $t>0$, the real power $t^{\beta}$ is positive. Therefore the right-hand side of (8) is the
+product of the negative number $-t^\beta$ with a positive number, so
+$$\mathcal{L}u_\lambda(x_\lambda)\ <\ 0,$$
+which contradicts (6).
+
+This contradiction shows that no $\bar x\in\Omega$ with $u(\bar x)>v(\bar x)$ exists, i.e.\
+$u\leq v$ in $\Omega$.
+\end{proof}

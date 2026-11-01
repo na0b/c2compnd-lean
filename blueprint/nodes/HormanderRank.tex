@@ -1,0 +1,13 @@
+\begin{definition}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be a family of vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$. We say that $\sigma$ \emph{satisfies the H\"ormander rank
+condition}, written $\mathrm{HormanderRank}(\sigma)$, if for every $x\in\mathbb{R}^n$ the linear
+span of the set of evaluations at $x$ of the vector fields of $\mathrm{HorFamily}(\sigma)$ (see
+\noderef{HorFamily}) is the whole of $\mathbb{R}^n$:
+$$\mathrm{span}_{\mathbb{R}}\big\{V(x)\ :\ V\in\mathrm{HorFamily}(\sigma)\big\}=\mathbb{R}^n
+\qquad\text{for every }x\in\mathbb{R}^n .$$
+Since $\mathbb{R}^n$ has dimension $n$, this says exactly that
+$\dim\big(\mathrm{Lie}(X_1,\dots,X_m)(x)\big)=n$ at every point $x\in\mathbb{R}^n$, which is the
+paper's condition \texttt{eq:horcond} for the first-order operators
+$X_i=\sigma^i(x)\cdot\nabla$.
+\end{definition}

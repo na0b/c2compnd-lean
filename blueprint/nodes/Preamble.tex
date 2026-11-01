@@ -1,0 +1,84 @@
+\begin{definition}[Ambient space, functions, and derivative conventions]
+Throughout, $n,m\in\mathbb{N}$ and the ambient space is $\mathbb{R}^n$ equipped with the standard
+Euclidean inner product $\langle\cdot,\cdot\rangle$; vectors of $\mathbb{R}^m$ are written as
+functions $\{1,\dots,m\}\to\mathbb{R}$ and $\mathbb{R}^{m\times m}$ denotes the real
+$m\times m$ matrices.
+
+Scalar functions and vector fields are taken to be defined on all of $\mathbb{R}^n$:
+a function of the paper's class $C^2(\Omega)\cap C(\overline\Omega)$ is represented by a function
+$u:\mathbb{R}^n\to\mathbb{R}$ together with the hypotheses that $u$ is of class $C^2$ on $\Omega$
+and continuous on $\overline\Omega$. Since every hypothesis and every conclusion below is
+restricted to $\Omega$ or to $\overline\Omega$, and since $\Omega$ is open, the values of $u$
+outside $\overline\Omega$ never enter, and the derivatives of $u$ at points of $\Omega$ are the
+intrinsic ones.
+
+For $u:\mathbb{R}^n\to\mathbb{R}$ and $x\in\mathbb{R}^n$, $Du(x)$ denotes the Fr\'echet derivative
+of $u$ at $x$, a linear functional on $\mathbb{R}^n$, identified with the Euclidean gradient
+through $Du(x)[z]=\langle\nabla u(x),z\rangle$. By convention $Du(x):=0$ when $u$ is not
+differentiable at $x$; the same convention is used for all the derivatives below. The second
+derivative is the bilinear form
+$$D^2u(x)[z_1,z_2]:=\Big(D\big(y\mapsto Du(y)\big)(x)[z_1]\Big)[z_2],$$
+so that, in the matrix notation $D^2u=(\partial_{x_i}\partial_{x_j}u)_{i,j}$ of Section~2.1 of
+the paper,
+$$D^2u(x)[z_1,z_2]=\langle D^2u(x)\,z_1,z_2\rangle=\sum_{i,j=1}^n
+\partial_{x_i}\partial_{x_j}u(x)\,(z_1)_i\,(z_2)_j.$$
+For a vector field
+$V:\mathbb{R}^n\to\mathbb{R}^n$, $DV(x)$ denotes its Jacobian, so that $DV(x)z$ is the derivative
+of $V$ at $x$ in the direction $z$.
+
+We say that $f$ is \emph{of class $C^k$ in a neighbourhood of $x$} if there is an open set
+containing $x$ on which $f$ is $k$ times continuously differentiable, and \emph{smooth} means of
+class $C^k$ for every $k$. We write $g'(t)$ and $g''(t)$ for the first and second derivatives of a
+function $g:\mathbb{R}\to\mathbb{R}$, $\overline{S}$ for the closure of a set $S\subset\mathbb{R}^n$,
+$\partial S$ for its topological frontier, and $A^T$ for the transpose of a matrix $A$.
+\end{definition}
+
+\begin{definition}[Order on symmetric matrices and the Lie bracket]
+For symmetric $A,B\in\mathbb{R}^{m\times m}$ we write $A\leq B$ when $B-A$ is positive
+semi-definite, i.e. $\langle(B-A)\xi,\xi\rangle\geq0$ for every $\xi\in\mathbb{R}^m$; this is the
+order of Section~2.1 of the paper. A matrix is called \emph{positive semi-definite} only if it is
+in addition symmetric, so that "$A$ is positive semi-definite'' always abbreviates "$A$ is
+symmetric and $\langle A\xi,\xi\rangle\geq0$ for every $\xi$''.
+
+For vector fields $V,W:\mathbb{R}^n\to\mathbb{R}^n$ the Lie bracket is the vector field
+$$[V,W](x):=DW(x)\,V(x)-DV(x)\,W(x).$$
+\end{definition}
+
+\begin{proposition}[Weierstrass]
+Let $X$ be a topological space, let $K\subset X$ be non-empty and compact and let $f:X\to\mathbb{R}$
+be continuous on $K$. Then $f$ attains a maximum over $K$: there is $x_0\in K$ with
+$f(y)\leq f(x_0)$ for every $y\in K$. The same holds for the minimum.
+\end{proposition}
+
+\begin{proposition}[Closure of a bounded set, and the frontier decomposition]
+A bounded subset $\Omega\subset\mathbb{R}^n$ has compact closure $\overline\Omega$. For every
+subset $S\subset\mathbb{R}^n$ one has $\overline{S}=S\cup\partial S$.
+\end{proposition}
+
+\begin{proposition}[First-order necessary condition at a local extremum]
+Let $f:\mathbb{R}^n\to\mathbb{R}$ and let $x_0$ be a local maximum point of $f$. Then
+$Df(x_0)=0$. The same holds at a local minimum point.
+\end{proposition}
+
+\begin{proposition}[Symmetry of the second derivative]
+Let $f:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ in a neighbourhood of $x$. Then the bilinear
+form $D^2f(x)$ is symmetric: $D^2f(x)[z_1,z_2]=D^2f(x)[z_2,z_1]$ for all
+$z_1,z_2\in\mathbb{R}^n$.
+\end{proposition}
+
+\begin{proposition}[Second-derivative test, sufficient direction]
+Let $g:\mathbb{R}\to\mathbb{R}$ and $t_0\in\mathbb{R}$ be such that $g$ is continuous at $t_0$,
+$g'(t_0)=0$ and $g''(t_0)>0$. Then $t_0$ is a local minimum point of $g$.
+\end{proposition}
+
+\begin{proposition}[Positive semi-definite square root]
+Let $A\in\mathbb{R}^{m\times m}$ be positive semi-definite. Then there is a positive semi-definite
+$P\in\mathbb{R}^{m\times m}$ with $P^2=A$.
+\end{proposition}
+
+\begin{proposition}[Elementary properties of the trace]
+For $A,B,C\in\mathbb{R}^{m\times m}$ and $c\in\mathbb{R}$ one has
+$\operatorname{Tr}(A(B+C))=\operatorname{Tr}(AB)+\operatorname{Tr}(AC)$,
+$\operatorname{Tr}(A(cB))=c\operatorname{Tr}(AB)$,
+$\operatorname{Tr}(AB)=\sum_{i,k}A_{i,k}B_{k,i}$ and $\operatorname{Tr}(AB)=\operatorname{Tr}(BA)$.
+\end{proposition}

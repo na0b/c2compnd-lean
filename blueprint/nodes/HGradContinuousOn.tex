@@ -1,0 +1,31 @@
+\begin{lemma}
+Let $n,m\in\mathbb{N}$, let $\sigma=(\sigma^1,\dots,\sigma^m)$ be smooth vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$, let $\Omega\subset\mathbb{R}^n$ be open and let
+$u:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ on $\Omega$. Then the horizontal gradient
+$\mathfrak{X}u:\mathbb{R}^n\to\mathbb{R}^m$ is continuous on $\Omega$. This is the step ``by
+assumption and continuity of $\mathfrak{X}u$'' at the start of the proof of Proposition
+\texttt{lem:comp0} of the paper.
+\end{lemma}
+\begin{proof}
+Since $u$ is of class $C^2$ on the open set $\Omega$, the differential map
+$y\mapsto Du(y)$, with values in the space $\big(\mathbb{R}^n\big)^*$ of continuous linear
+functionals on $\mathbb{R}^n$, is continuous on $\Omega$: a $C^2$ function on an open set is in
+particular $C^1$ there, and for a function of class $C^1$ on an open set the differential is
+continuous on that set (preamble).
+
+Fix $i\in\{1,\dots,m\}$. By the definition of the horizontal gradient (\noderef{HGrad}), the
+$i$-th component of $\mathfrak{X}u$ is
+$$\big(\mathfrak{X}u(y)\big)_i=Du(y)\big[\sigma^i(y)\big].$$
+The map $y\mapsto\sigma^i(y)$ is smooth on $\mathbb{R}^n$, hence continuous, and therefore
+continuous on $\Omega$. The map $y\mapsto Du(y)$ is continuous on $\Omega$ by the previous
+paragraph. The evaluation pairing
+$$\big(\mathbb{R}^n\big)^*\times\mathbb{R}^n\to\mathbb{R},\qquad(\Lambda,\eta)\mapsto\Lambda[\eta],$$
+is continuous, being bilinear and bounded on the finite-dimensional space
+$\big(\mathbb{R}^n\big)^*\times\mathbb{R}^n$ (preamble). Composing the continuous map
+$y\mapsto\big(Du(y),\sigma^i(y)\big)$ on $\Omega$ with this continuous pairing shows that
+$y\mapsto Du(y)\big[\sigma^i(y)\big]$ is continuous on $\Omega$.
+
+Thus every component of $\mathfrak{X}u$ is continuous on $\Omega$. A map into the
+finite-dimensional space $\mathbb{R}^m$ is continuous on a set exactly when each of its $m$
+components is (preamble), so $\mathfrak{X}u$ is continuous on $\Omega$.
+\end{proof}

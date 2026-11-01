@@ -1,0 +1,31 @@
+\begin{lemma}
+Let $m\in\mathbb{N}$, let $A\in\mathbb{R}^{m\times m}$ be symmetric, i.e.\ $A^T=A$, and let
+$B\in\mathbb{R}^{m\times m}$ be arbitrary. Then
+$$\operatorname{Tr}\Big(A\cdot\tfrac12\big(B+B^T\big)\Big)=\operatorname{Tr}(AB).$$
+Equivalently, replacing the second factor by its symmetrization does not change its trace against
+a symmetric matrix. This is the matrix fact underlying the paper's remark, just after
+\texttt{eq:maineq}, that because $a(\xi)$ is symmetric the equation
+$\mathcal{L}u=-\operatorname{Tr}\big(a(\mathfrak{X}u)\mathfrak{X}\mathfrak{X}u\big)=0$ can also be
+written with the symmetrized sub-elliptic second derivative
+$\mathfrak{X}\mathfrak{X}^\star u$ in place of $\mathfrak{X}\mathfrak{X}u$.
+\end{lemma}
+\begin{proof}
+First, $\operatorname{Tr}\big(AB^T\big)=\operatorname{Tr}(AB)$. Indeed, by the entrywise formula
+for the trace of a product (preamble) and the symmetry of $A$,
+$$\operatorname{Tr}\big(AB^T\big)=\sum_{i,k=1}^mA_{i,k}\big(B^T\big)_{k,i}
+=\sum_{i,k=1}^mA_{i,k}B_{i,k}
+=\sum_{i,k=1}^mA_{k,i}B_{i,k}=\operatorname{Tr}(AB),$$
+where the first and last equalities are that formula applied to $AB^T$ and to $AB$, the second
+uses $\big(B^T\big)_{k,i}=B_{i,k}$, and the third renames the summation indices
+$i\leftrightarrow k$ and uses $A_{i,k}=A_{k,i}$, which is the hypothesis $A^T=A$.
+
+Hence, using the linearity of the trace in the sense of the identities
+$\operatorname{Tr}\big(A(B+C)\big)=\operatorname{Tr}(AB)+\operatorname{Tr}(AC)$ and
+$\operatorname{Tr}\big(A(cB)\big)=c\operatorname{Tr}(AB)$ (preamble), with $C:=B^T$ and
+$c:=\tfrac12$,
+$$\operatorname{Tr}\Big(A\cdot\tfrac12\big(B+B^T\big)\Big)
+=\tfrac12\operatorname{Tr}\big(A(B+B^T)\big)
+=\tfrac12\operatorname{Tr}(AB)+\tfrac12\operatorname{Tr}\big(AB^T\big)
+=\tfrac12\operatorname{Tr}(AB)+\tfrac12\operatorname{Tr}(AB)=\operatorname{Tr}(AB),$$
+the third equality by the first paragraph.
+\end{proof}

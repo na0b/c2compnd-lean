@@ -1,0 +1,37 @@
+\begin{lemma}
+Let $\lambda,u_0\in\mathbb{R}$ and let
+$$h(s):=s+\lambda\,(s-u_0)^2\qquad(s\in\mathbb{R}).$$
+Then $h\in C^2(\mathbb{R})$ and
+$$h'(s)=1+2\lambda\,(s-u_0),\qquad h''(s)=2\lambda\qquad\text{for every }s\in\mathbb{R}.$$
+These are the function $h_\lambda$ and the two derivative formulas displayed in the proof of
+Proposition \texttt{lem:comp0} of the paper, where it is recorded that $h_\lambda'\geq1$ on the
+range of $u$ (because $u-u_0\geq0$ there) and that $h_\lambda''=2\lambda$.
+\end{lemma}
+\begin{proof}
+Write $q(s):=(s-u_0)^2$, so that $h(s)=s+\lambda\,q(s)$.
+
+\emph{The derivative of $q$.} The affine map $s\mapsto s-u_0$ is differentiable at every
+$s\in\mathbb{R}$ with derivative $1$, being the sum of the identity (derivative $1$) and the
+constant $-u_0$ (derivative $0$) (preamble). Since $q(s)=(s-u_0)\cdot(s-u_0)$, the product rule
+(preamble) gives, for every $s\in\mathbb{R}$,
+$$q'(s)=1\cdot(s-u_0)+(s-u_0)\cdot1=2\,(s-u_0).$$
+
+\emph{The derivative of $h$.} The identity has derivative $1$ at every point, and
+$s\mapsto\lambda\,q(s)$ has derivative $\lambda\,q'(s)=\lambda\cdot2(s-u_0)$ by the previous
+paragraph and the rule for a constant multiple (preamble). Hence, by the sum rule (preamble),
+$h$ is differentiable at every $s\in\mathbb{R}$ with
+$$h'(s)=1+\lambda\cdot2\,(s-u_0)=1+2\lambda\,(s-u_0),$$
+which is the first asserted formula.
+
+\emph{The second derivative of $h$.} By the previous paragraph the function $h'$ is given by
+$h'(s)=1+2\lambda\,(s-u_0)$ for every $s\in\mathbb{R}$, i.e.\ $h'$ is the affine function
+$s\mapsto1+2\lambda\,(s-u_0)$. Differentiating it at an arbitrary $s\in\mathbb{R}$: the map
+$s\mapsto s-u_0$ has derivative $1$, so $s\mapsto2\lambda\,(s-u_0)$ has derivative
+$2\lambda\cdot1=2\lambda$ by the constant-multiple rule, and adding the constant $1$ does not
+change the derivative (preamble). Hence $h''(s)=2\lambda$ for every $s\in\mathbb{R}$, which is
+the second asserted formula.
+
+\emph{Regularity.} The function $h$ is a polynomial in $s$ of degree at most two, namely
+$h(s)=\lambda s^2+(1-2\lambda u_0)s+\lambda u_0^2$. Polynomials are infinitely differentiable on
+$\mathbb{R}$ (preamble), so in particular $h\in C^2(\mathbb{R})$.
+\end{proof}

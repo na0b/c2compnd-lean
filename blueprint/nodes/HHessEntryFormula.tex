@@ -1,0 +1,41 @@
+\begin{lemma}
+Let $\sigma=(\sigma^1,\dots,\sigma^m)$ be vector fields $\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$, let
+$u:\mathbb{R}^n\to\mathbb{R}$, let $x\in\mathbb{R}^n$ and let $i,j\in\{1,\dots,m\}$. Assume that
+$u$ is of class $C^2$ in a neighbourhood of $x$ and that $\sigma^i$ is of class $C^1$ in a
+neighbourhood of $x$. Then
+$$\big(\mathfrak{X}\mathfrak{X}u(x)\big)_{i,j}\ =\
+D^2u(x)\big[\sigma^j(x),\sigma^i(x)\big]\ +\ Du(x)\big[D\sigma^i(x)\,\sigma^j(x)\big],$$
+that is, $X_jX_iu=\langle D^2u\,\sigma^j,\sigma^i\rangle+\langle\nabla
+u,D\sigma^i\,\sigma^j\rangle$. This is the identity $X_jX_iu=\langle
+D^2u\,\sigma^i,\sigma^j\rangle+\langle D\sigma^i\,\sigma^j,\nabla u\rangle$ recorded in
+Section~2.1 of the paper, which underlies \texttt{eq:sigrad} and the formula \texttt{eq:Mxz} for
+the first-order matrix $\mathcal{M}(x,\zeta)$.
+\end{lemma}
+\begin{proof}
+By the definition of the horizontal second derivative matrix (\noderef{HHess}),
+$$\big(\mathfrak{X}\mathfrak{X}u(x)\big)_{i,j}=D\varphi(x)\big[\sigma^j(x)\big],\qquad\text{where}
+\qquad \varphi(y):=Du(y)\big[\sigma^i(y)\big].$$
+It therefore suffices to compute $D\varphi(x)[z]$ for an arbitrary $z\in\mathbb{R}^n$ and then take
+$z=\sigma^j(x)$.
+
+The function $\varphi$ is the composition of the map
+$y\mapsto\big(Du(y),\sigma^i(y)\big)$ with the evaluation pairing
+$$\Phi:\big(\mathbb{R}^n\big)^*\times\mathbb{R}^n\to\mathbb{R},\qquad
+\Phi(\Lambda,\eta):=\Lambda[\eta],$$
+which is bilinear and continuous. Its two components are differentiable at $x$:
+\begin{itemize}
+\item since $u$ is of class $C^2$ in a neighbourhood of $x$, the map $y\mapsto Du(y)$ is
+differentiable at $x$, with derivative $z\mapsto D\big(y\mapsto Du(y)\big)(x)[z]$;
+\item since $\sigma^i$ is of class $C^1$ in a neighbourhood of $x$, the map $y\mapsto\sigma^i(y)$
+is differentiable at $x$, with derivative $z\mapsto D\sigma^i(x)\,z$.
+\end{itemize}
+By the chain rule applied to $\Phi$ composed with this pair (equivalently, by the product rule for
+a continuous bilinear pairing), $\varphi$ is differentiable at $x$ and for every
+$z\in\mathbb{R}^n$
+$$D\varphi(x)[z]=\Big(D\big(y\mapsto Du(y)\big)(x)[z]\Big)\big[\sigma^i(x)\big]
+\ +\ Du(x)\big[D\sigma^i(x)\,z\big].$$
+By the definition of the second derivative fixed in the preamble, the first summand is
+$D^2u(x)\big[z,\sigma^i(x)\big]$. Hence
+$$D\varphi(x)[z]=D^2u(x)\big[z,\sigma^i(x)\big]+Du(x)\big[D\sigma^i(x)\,z\big].$$
+Taking $z=\sigma^j(x)$ gives exactly the asserted identity.
+\end{proof}

@@ -1,0 +1,46 @@
+\begin{corollary}
+Let $n,m\in\mathbb{N}$, let $\sigma=(\sigma^1,\dots,\sigma^m)$ be smooth vector fields
+$\sigma^i:\mathbb{R}^n\to\mathbb{R}^n$ satisfying the H\"ormander rank condition, i.e.\ such that
+for every $x\in\mathbb{R}^n$ the linear span of $\{V(x):V\in\mathrm{HorFamily}(\sigma)\}$ is
+$\mathbb{R}^n$ (\noderef{HormanderRank}). Let $\beta\in\mathbb{R}$ and let
+$a:\mathbb{R}^m\to\mathbb{R}^{m\times m}$ be continuous on $\mathbb{R}^m\setminus\{0\}$ and such
+that, for every $\xi\in\mathbb{R}^m\setminus\{0\}$, the matrix $a(\xi)$ is symmetric and positive
+semi-definite, $\mathcal{E}(\xi)=\langle a(\xi)\xi,\xi\rangle>0$, and $a(t\xi)=t^\beta a(\xi)$ for
+every $t>0$. Let $\Omega\subset\mathbb{R}^n$ be a bounded open set and let
+$u,v:\mathbb{R}^n\to\mathbb{R}$ be of class $C^2$ on $\Omega$ and continuous on $\overline\Omega$.
+Assume that each of $u$ and $v$ is a solution of $\mathcal{L}=0$ in $\Omega$, i.e.\ that each of
+them is simultaneously a classical sub-solution and a classical super-solution in $\Omega$
+(\noderef{IsClassicalSubsol}, \noderef{IsClassicalSupersol}); that $u=v$ on $\partial\Omega$; and
+that $v$ has no horizontal critical point in $\Omega$, i.e.\ $\mathfrak{X}v(x)\neq0$ for every
+$x\in\Omega$. Then
+$$u=v\qquad\text{on }\overline\Omega .$$
+\end{corollary}
+\begin{proof}
+All the ambient hypotheses of \noderef{CorNocritComparison} on $\sigma$, $a$, $\beta$ and $\Omega$
+(smoothness of $\sigma$, the H\"ormander rank condition, continuity, symmetry, positive
+semi-definiteness, ellipticity and homogeneity of $a$, openness and boundedness of $\Omega$) are
+among our hypotheses verbatim, and both $u$ and $v$ are of class $C^2$ on $\Omega$ and continuous
+on $\overline\Omega$. We apply \noderef{CorNocritComparison} twice, exchanging the roles of the two
+functions.
+
+\emph{Step 1: $u\leq v$ in $\Omega$.} Apply \noderef{CorNocritComparison} with $u$ in the role of
+the sub-solution and $v$ in the role of the super-solution. Indeed $u$ is a classical sub-solution
+in $\Omega$ and $v$ is a classical super-solution in $\Omega$ (both being solutions); the boundary
+hypothesis holds, since $u=v$ on $\partial\Omega$ gives $u\leq v$ on $\partial\Omega$; and the
+disjunctive hypothesis holds through its first alternative, namely that the super-solution $v$ has
+no horizontal critical point in $\Omega$, which is our hypothesis $\mathfrak{X}v(x)\neq0$ for every
+$x\in\Omega$. The conclusion is $u(x)\leq v(x)$ for every $x\in\Omega$.
+
+\emph{Step 2: $v\leq u$ in $\Omega$.} Apply \noderef{CorNocritComparison} again, now with $v$ in
+the role of the sub-solution and $u$ in the role of the super-solution. Indeed $v$ is a classical
+sub-solution in $\Omega$ and $u$ is a classical super-solution in $\Omega$ (both being solutions);
+the boundary hypothesis holds, since $u=v$ on $\partial\Omega$ gives $v\leq u$ on $\partial\Omega$;
+and the disjunctive hypothesis holds through its second alternative, which for this role assignment
+reads that the sub-solution $v$ has no horizontal critical point in $\Omega$, again our hypothesis
+$\mathfrak{X}v(x)\neq0$ for every $x\in\Omega$. The conclusion is $v(x)\leq u(x)$ for every
+$x\in\Omega$.
+
+\emph{Step 3: conclusion.} By Steps 1 and 2, $u(x)=v(x)$ for every $x\in\Omega$. By hypothesis
+$u(x)=v(x)$ for every $x\in\partial\Omega$. Since
+$\overline\Omega=\Omega\cup\partial\Omega$ (preamble), $u=v$ on $\overline\Omega$.
+\end{proof}

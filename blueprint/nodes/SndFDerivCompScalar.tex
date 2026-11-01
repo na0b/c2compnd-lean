@@ -1,0 +1,39 @@
+\begin{lemma}
+Let $n\in\mathbb{N}$, let $h\in C^2(\mathbb{R})$, let $w:\mathbb{R}^n\to\mathbb{R}$ and let
+$x\in\mathbb{R}^n$. Assume that $w$ is of class $C^2$ in a neighbourhood of $x$. Then, for all
+$z_1,z_2\in\mathbb{R}^n$,
+$$D^2(h\circ w)(x)[z_1,z_2]=h''\big(w(x)\big)\,Dw(x)[z_1]\,Dw(x)[z_2]
++h'\big(w(x)\big)\,D^2w(x)[z_1,z_2].$$
+\end{lemma}
+\begin{proof}
+Write $t:=h'(w(x))$ and $s:=h''(w(x))$, and let $V$ be an open neighbourhood of $x$ on which $w$ is
+of class $C^2$.
+
+\emph{Step 1: the first derivative of $h\circ w$ on $V$.} Since $h\in C^2(\mathbb{R})$, $h$ is
+differentiable on $\mathbb{R}$; and $w$ is differentiable at every $y\in V$. Hence the chain rule
+applies to $h\circ w$ at every $y\in V$ and gives
+\begin{equation*}D(h\circ w)(y)=h'\big(w(y)\big)\,Dw(y)\qquad\text{for every }y\in V. \tag{1}\end{equation*}
+In particular the map $y\mapsto D(h\circ w)(y)$ agrees on the neighbourhood $V$ of $x$ with the
+product of the scalar function $y\mapsto h'(w(y))$ and the $\big(\mathbb{R}^n\big)^*$-valued
+function $y\mapsto Dw(y)$.
+
+\emph{Step 2: the two factors are differentiable at $x$.} Since $h\in C^2(\mathbb{R})$, the
+function $h'$ is differentiable on $\mathbb{R}$, and $w$ is differentiable at $x$; so by the chain
+rule $y\mapsto h'(w(y))$ is differentiable at $x$ with
+$$D\big(y\mapsto h'(w(y))\big)(x)[z_1]=h''\big(w(x)\big)\,Dw(x)[z_1]=s\,Dw(x)[z_1]
+\qquad\text{for every }z_1\in\mathbb{R}^n .$$
+Since $w$ is of class $C^2$ on $V$, the map $y\mapsto Dw(y)$ is differentiable at $x$, with
+derivative $z_1\mapsto D\big(y\mapsto Dw(y)\big)(x)[z_1]$.
+
+\emph{Step 3: the product rule.} By Step 2 and the product rule for a scalar function times a
+vector-valued map, the product of the two factors is differentiable at $x$, and by Step 1 it agrees
+with $y\mapsto D(h\circ w)(y)$ on a neighbourhood of $x$; hence that map is differentiable at $x$
+with the same derivative, which, using (1) at $y=x$ to evaluate the scalar factor, is
+$$D\big(y\mapsto D(h\circ w)(y)\big)(x)[z_1]
+=s\,\big(Dw(x)[z_1]\big)\,Dw(x)+t\,D\big(y\mapsto Dw(y)\big)(x)[z_1]$$
+for every $z_1\in\mathbb{R}^n$. Evaluating this identity of linear functionals at
+$z_2\in\mathbb{R}^n$ and using the definition of the second derivative from the preamble, i.e.\
+$D^2g(x)[z_1,z_2]=\big(D(y\mapsto Dg(y))(x)[z_1]\big)[z_2]$,
+$$D^2(h\circ w)(x)[z_1,z_2]=s\,Dw(x)[z_1]\,Dw(x)[z_2]+t\,D^2w(x)[z_1,z_2],$$
+which is the claim.
+\end{proof}
