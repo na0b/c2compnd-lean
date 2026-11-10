@@ -142,7 +142,7 @@ blueprint/blueprint.tex  natural-language companion (inputs blueprint/nodes/*.te
 
 ## How this formalization was produced
 
-The formalization was produced with [Trellis](https://github.com/wpegden/trellis), an AI-assisted formalization pipeline; the Lean proofs and the blueprint were written by AI agents (Claude, by Anthropic) under the Trellis protocol. Each node was reviewed automatically for soundness of its natural-language proof, for faithfulness to the paper, and for agreement between its Lean statement and its natural-language statement. Juan J. Manfredi chose the targets and approved the statements at the Trellis gate, including the generalization to arbitrary Hörmander frames. The Lean kernel checks every proof.
+The formalization was produced with [Trellis](https://github.com/wpegden/trellis), an AI-assisted formalization pipeline; the Lean proofs and the blueprint were written by AI agents (Claude, by Anthropic) under the Trellis protocol. Each node was reviewed automatically for soundness of its natural-language proof, for faithfulness to the paper, and for agreement between its Lean statement and its natural-language statement. Juan J. Manfredi and Shirsho Mukherjee chose the targets and approved the statements at the Trellis gate, including the generalization to arbitrary Hörmander frames. The Lean kernel checks every proof.
 
 ## Citation
 
